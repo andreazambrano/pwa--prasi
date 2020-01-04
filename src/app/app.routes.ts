@@ -48,6 +48,16 @@ import {
 	WrapperComponent,
 	CurrencyselectorComponent,
 	TestappComponent,
+	PrasitopbarComponent,
+	PrasisliderComponent,
+	PrasicategorycarouselComponent,
+	PrasiproductcatalogComponent,
+	PrasiinstagramfeedComponent,
+	PrasitopfooterComponent,
+	PrasifooterComponent,
+	PrasiaboutoverlayComponent,
+	PrasicartoverlayComponent,
+	PrasisearchoverlayComponent,
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -100,7 +110,16 @@ const app_routes: Routes = [
 	{path:'modalegreso',component:ModalegresoComponent},
 	{path:'modalingreso',component:ModalingresoComponent},
 	{path:'currencyselector',component:CurrencyselectorComponent},
-	
+	{path:'prasitopbar',component:PrasitopbarComponent},
+	{path:'prasislider',component:PrasisliderComponent},
+	{path:'prasicategorycarousel',component:PrasicategorycarouselComponent},
+	{path:'prasiproductcatalog',component:PrasiproductcatalogComponent},
+	{path:'prasiinstagram',component:PrasiinstagramfeedComponent},
+	{path:'prasitopfooter',component:PrasitopfooterComponent},
+	{path:'prasifooter',component:PrasifooterComponent},
+	{path:'prasiaboutoverlay',component:PrasiaboutoverlayComponent},
+	{path:'prasicartoverlay',component:PrasicartoverlayComponent},
+	{path:'prasisearchoverlay',component:PrasisearchoverlayComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

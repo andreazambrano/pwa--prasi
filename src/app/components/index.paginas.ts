@@ -46,4 +46,16 @@ export { ModalegresoComponent } from "./modalegreso/modalegreso.component";
 export { ModalingresoComponent } from "./modalingreso/modalingreso.component";
 export { CurrencyselectorComponent } from "./currencyselector/currencyselector.component";
 export { TestappComponent } from "./testapp/testapp.component";
+export { PrasitopbarComponent } from "./prasitopbar/prasitopbar.component";
+export { PrasisliderComponent } from "./prasislider/prasislider.component";
+export { PrasicategorycarouselComponent } from "./prasicategorycarousel/prasicategorycarousel.component";
+export { PrasiproductcatalogComponent } from "./prasiproductcatalog/prasiproductcatalog.component";
+export { PrasiinstagramfeedComponent } from "./prasiinstagramfeed/prasiinstagramfeed.component";
+
+export { PrasitopfooterComponent } from "./prasitopfooter/prasitopfooter.component";
+export { PrasifooterComponent } from "./prasifooter/prasifooter.component";
+export { PrasiaboutoverlayComponent } from "./prasiaboutoverlay/prasiaboutoverlay.component";
+export { PrasicartoverlayComponent } from "./prasicartoverlay/prasicartoverlay.component";
+export { PrasisearchoverlayComponent } from "./prasisearchoverlay/prasisearchoverlay.component";
+
 

@@ -115,6 +115,16 @@ import { ModalnewcategoryComponent } from './components/modalnewcategory/modalne
 import { ModalcategorylistComponent } from './components/modalcategorylist/modalcategorylist.component';
 import { CurrencyselectorComponent } from './components/currencyselector/currencyselector.component';
 import { TestappComponent } from './components/testapp/testapp.component';
+import { PrasitopbarComponent } from './components/prasitopbar/prasitopbar.component';
+import { PrasisliderComponent } from './components/prasislider/prasislider.component';
+import { PrasicategorycarouselComponent } from './components/prasicategorycarousel/prasicategorycarousel.component';
+import { PrasiproductcatalogComponent } from './components/prasiproductcatalog/prasiproductcatalog.component';
+import { PrasiinstagramfeedComponent } from './components/prasiinstagramfeed/prasiinstagramfeed.component';
+import { PrasitopfooterComponent } from './components/prasitopfooter/prasitopfooter.component';
+import { PrasifooterComponent } from './components/prasifooter/prasifooter.component';
+import { PrasiaboutoverlayComponent } from './components/prasiaboutoverlay/prasiaboutoverlay.component';
+import { PrasicartoverlayComponent } from './components/prasicartoverlay/prasicartoverlay.component';
+import { PrasisearchoverlayComponent } from './components/prasisearchoverlay/prasisearchoverlay.component';
 
 
 
@@ -192,6 +202,16 @@ import { TestappComponent } from './components/testapp/testapp.component';
     ModalcategorylistComponent,
     CurrencyselectorComponent,
     TestappComponent,
+    PrasitopbarComponent,
+    PrasisliderComponent,
+    PrasicategorycarouselComponent,
+    PrasiproductcatalogComponent,
+    PrasiinstagramfeedComponent,
+    PrasitopfooterComponent,
+    PrasifooterComponent,
+    PrasiaboutoverlayComponent,
+    PrasicartoverlayComponent,
+    PrasisearchoverlayComponent,
 
   ],
   imports: [
