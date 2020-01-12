@@ -58,6 +58,10 @@ import {
 	PrasiaboutoverlayComponent,
 	PrasicartoverlayComponent,
 	PrasisearchoverlayComponent,
+	PrasiproductdetailComponent,
+	PrasicontactComponent,	
+	PrasiaboutComponent,
+	PrasidevolucionesComponent,
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -120,6 +124,10 @@ const app_routes: Routes = [
 	{path:'prasiaboutoverlay',component:PrasiaboutoverlayComponent},
 	{path:'prasicartoverlay',component:PrasicartoverlayComponent},
 	{path:'prasisearchoverlay',component:PrasisearchoverlayComponent},
+	{path:'prasiproductdetail',component:PrasiproductdetailComponent},
+	{path:'prasicontact',component:PrasicontactComponent},
+	{path:'prasiabout',component:PrasiaboutComponent},
+	{path:'prasidevoluciones',component:PrasidevolucionesComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

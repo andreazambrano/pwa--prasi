@@ -125,6 +125,11 @@ import { PrasifooterComponent } from './components/prasifooter/prasifooter.compo
 import { PrasiaboutoverlayComponent } from './components/prasiaboutoverlay/prasiaboutoverlay.component';
 import { PrasicartoverlayComponent } from './components/prasicartoverlay/prasicartoverlay.component';
 import { PrasisearchoverlayComponent } from './components/prasisearchoverlay/prasisearchoverlay.component';
+import { PrasiproductdetailComponent } from './components/prasiproductdetail/prasiproductdetail.component';
+import { PrasicontactComponent } from './components/prasicontact/prasicontact.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { PrasiaboutComponent } from './components/prasiabout/prasiabout.component';
+import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasidevoluciones.component';
 
 
 
@@ -212,6 +217,11 @@ import { PrasisearchoverlayComponent } from './components/prasisearchoverlay/pra
     PrasiaboutoverlayComponent,
     PrasicartoverlayComponent,
     PrasisearchoverlayComponent,
+    PrasiproductdetailComponent,
+    PrasicontactComponent,
+    NosotrosComponent,
+    PrasiaboutComponent,
+    PrasidevolucionesComponent,
 
   ],
   imports: [
