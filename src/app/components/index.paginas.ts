@@ -51,7 +51,6 @@ export { PrasisliderComponent } from "./prasislider/prasislider.component";
 export { PrasicategorycarouselComponent } from "./prasicategorycarousel/prasicategorycarousel.component";
 export { PrasiproductcatalogComponent } from "./prasiproductcatalog/prasiproductcatalog.component";
 export { PrasiinstagramfeedComponent } from "./prasiinstagramfeed/prasiinstagramfeed.component";
-
 export { PrasitopfooterComponent } from "./prasitopfooter/prasitopfooter.component";
 export { PrasifooterComponent } from "./prasifooter/prasifooter.component";
 export { PrasiaboutoverlayComponent } from "./prasiaboutoverlay/prasiaboutoverlay.component";
@@ -61,3 +60,4 @@ export { PrasiproductdetailComponent } from "./prasiproductdetail/prasiproductde
 export { PrasicontactComponent } from "./prasicontact/prasicontact.component";
 export { PrasiaboutComponent } from "./prasiabout/prasiabout.component";
 export { PrasidevolucionesComponent } from "./prasidevoluciones/prasidevoluciones.component";
+export { AdminComponent } from "./admin/admin.component";

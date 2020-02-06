@@ -7,6 +7,11 @@ import { ArchwizardModule } from 'angular-archwizard';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, Inject} from '@angular/core';
 import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
+// import { NgxUIModule } from '@swimlane/ngx-ui';
+
+// import '@swimlane/ngx-ui/release/index.css';
+// import { RadioButtonModule } from '@swimlane/ngx-ui/lib/components/radiobutton/radiobutton.module';
+
 // import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //RUTAS
@@ -79,6 +84,7 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTableModule} from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
 import { TreksComponent } from './components/treks/treks.component';
 import { NavComponent } from './components/nav/nav.component';
 import { BookdetailComponent } from './components/bookdetail/bookdetail.component';
@@ -130,6 +136,7 @@ import { PrasicontactComponent } from './components/prasicontact/prasicontact.co
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { PrasiaboutComponent } from './components/prasiabout/prasiabout.component';
 import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasidevoluciones.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -222,6 +229,7 @@ import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasi
     NosotrosComponent,
     PrasiaboutComponent,
     PrasidevolucionesComponent,
+    AdminComponent,
 
   ],
   imports: [
@@ -242,7 +250,8 @@ import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasi
     ArchwizardModule,
     CarouselModule,
     XunkCalendarModule,
-    FilePickerModule
+    FilePickerModule,
+    MatRadioModule,
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,

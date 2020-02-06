@@ -62,6 +62,7 @@ import {
 	PrasicontactComponent,	
 	PrasiaboutComponent,
 	PrasidevolucionesComponent,
+	AdminComponent,
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -82,7 +83,7 @@ const app_routes: Routes = [
 	{path:'new-member/partner',component:PartnerComponent, canActivate:[AuthGuard]},
 	{path:'new-member/affiliate',component:AffiliateComponent, canActivate:[AuthGuard]},
 	{path:'profile',component:ProfileComponent, canActivate:[AuthGuard]},
-	{path:'addtixs',component:AddtixsComponent, canActivate:[AuthGuard]},
+	{path:'addtixs',component:AddtixsComponent },
 	{path:'booking',component:BookingComponent, canActivate:[AuthGuard]},
 	{path:'alltixslist',component:AlltixslistComponent},
 	{path:'alltixsleft',component:AlltixsleftComponent},
@@ -124,10 +125,11 @@ const app_routes: Routes = [
 	{path:'prasiaboutoverlay',component:PrasiaboutoverlayComponent},
 	{path:'prasicartoverlay',component:PrasicartoverlayComponent},
 	{path:'prasisearchoverlay',component:PrasisearchoverlayComponent},
-	{path:'prasiproductdetail',component:PrasiproductdetailComponent},
+	{path:'prasiproductdetail/:id',component:PrasiproductdetailComponent},
 	{path:'prasicontact',component:PrasicontactComponent},
 	{path:'prasiabout',component:PrasiaboutComponent},
 	{path:'prasidevoluciones',component:PrasidevolucionesComponent},
+		{path:'admin',component:AdminComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

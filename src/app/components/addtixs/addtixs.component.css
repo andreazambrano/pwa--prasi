@@ -10,6 +10,9 @@ button,html input[type=button],input[type=reset],input[type=submit] {
     margin: 10px 5px
 }
 
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
 .errorLabel{
 	color: red;
 }

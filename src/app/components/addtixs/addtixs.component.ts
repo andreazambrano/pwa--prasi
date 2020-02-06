@@ -119,6 +119,24 @@ public tix : TixInterface ={
       this.isError = false;
     }, 4000);
   }
+  set():void{
+    if(this.ngFormAddtixs.value.category=='Botas y botines'){
+    this._uw.botas=true;
+     this._uw.moccs=false;
+    this._uw.zapatos=false;
+
+    }
+    if(this.ngFormAddtixs.value.category=='Moccs'){
+    this._uw.botas=false;
+    this._uw.moccs=true;
+    this._uw.zapatos=false;
+    }
+    if(this.ngFormAddtixs.value.category=='Zapatos'){
+    this._uw.botas=false;
+      this._uw.zapatos=true;
+      this._uw.moccs=false;
+    }
+  }
  finish(){
     if (this._uw.errorFormAddtixs){
       this.sendTix();
@@ -142,7 +160,7 @@ public tix : TixInterface ={
   }
   onFileAdded(file: FilePreviewModel) {
     
-    file.fileName="https://db.andesproadventures.com:80/imgTixs/server/local-storage/tixsImages/"+file.fileName;
+    file.fileName="http://localhost:80/imgApi2/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
     // this.images.push(file.fileName);
 

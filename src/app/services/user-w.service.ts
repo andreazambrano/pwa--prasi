@@ -12,6 +12,7 @@ export class UserWService {
 	bandera:string;
 	book:any={};
 	bookToCancel:any={};
+	botas:boolean=false;
 	card:any={};
 	cardsResult:any[]=[];
 	editingTrek:boolean=false;
@@ -24,6 +25,7 @@ export class UserWService {
 	info:any={};
 	isLogged:boolean=false;
 	loaded:boolean=false;
+	moccs:boolean=false;
 	name:string;
 	partner:boolean;
 	queue:any[]=[];
@@ -40,6 +42,7 @@ export class UserWService {
 	validation:any={};
 	validationEmail:any={};
 	validationToDelete:any={};
+	zapatos:boolean=false;
 	// book:any[]=[];
   constructor() { }
 }
