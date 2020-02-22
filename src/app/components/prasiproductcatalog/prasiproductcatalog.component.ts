@@ -11,12 +11,15 @@ import { UserWService } from "../../services/user-w.service";
 export class PrasiproductcatalogComponent implements OnInit {
 
   constructor(
- private dataApi: DataApiService,
+    private dataApi: DataApiService,
     public _uw:UserWService
   	) { }
+  
 public tixs:TixInterface;
+public seted=false;
   ngOnInit() {
   	  this.getAllTixs();
+      this._uw.loaded=true;
   }
 
 getAllTixs(){

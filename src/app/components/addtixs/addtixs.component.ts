@@ -30,6 +30,42 @@ import { DemoFilePickerAdapter } from  '../../file-picker.adapter';
   styleUrls: ['./addtixs.component.css']
 })
 export class AddtixsComponent implements OnInit {
+ favoriteSeason: string;
+  seasons: string[] = ['Un precio para todos', 'Precio por talla'];
+
+  tallasBotas: string[]=[
+  '18 (12 cm)',
+  '19 (12,50 cm)',
+  '20 (13 cm)',
+  '21 (14 cm)',
+  '22 (14,50 cm)',
+  '23 (15 cm)',
+  '24 (15,80 cm)',
+  '25 (16,30 cm)'
+  ];
+
+ tallasMoccs: string[]=[
+  '16 (0-3 meses)',
+  '17 (3-6 meses)',
+  '18 (6-12 meses)',
+  '19 - 20 (12-18 meses)',
+  '21 - 22 (18-24 meses)',
+  'de 24 a 30 meses (a pedido)',
+  'de 30 a 36 meses (a pedido)'
+  ];
+
+  tallasZapatos: string[]=[
+  '18 (6 meses)',
+  '19 (9 meses)',
+  '20 (1 año)',
+  '21 (1 año 6 meses)',
+  '22 (2 años)',
+  '23 (2 años 6 meses)',
+  '24 (3 años)',
+  '25 (4 años)'
+  ];
+
+
 
 
     adapter = new DemoFilePickerAdapter(this.http,this._uw);
@@ -69,23 +105,57 @@ public tix : TixInterface ={
       description:"",
       notes:"",
       category:"",
+      check:[],
+      codigo:"",
+      color:"",
+      con:[],
+      globalPrice:0,
+      images:[],
+      modelo:"",
+      sin:[],
       status:"",
-      images:[]
+      tallas:[],
+      typePrice:"global"
     };
 
 
   public isError = false;
   public isLogged =false;
+  public precio = "sin";
+  public precio2 = "con";
+  public check = "check";
   public urlCreated = "";
   public images:any[]=[];
+   public checks:any[]=[];
+    public sin:any[]=[];
+     public con:any[]=[];
+     public tallas:any[]=[];
+
+     iniciador(size){
+        for (var i = 0; i < size; i++) {
+          this.checks[i]=true;
+          if (this._uw.moccs)
+          {
+          this.con[i]=0;
+          this.sin[i]=0;
+          }
+        }
+     }
+
 
   ngOnInit() {
+      
+
     this._uw.images=[];
- this.ngFormAddtixs = this.formBuilder.group({
+    this.ngFormAddtixs = this.formBuilder.group({
       productName: ['', [Validators.required]],
       description: ['', [Validators.required]],
       notes: ['', [Validators.required]],
-      category: ['', [Validators.required]]
+      category: ['', [Validators.required]],
+      color:['', [Validators.required]],
+      codigo:['', [Validators.required]],
+      modelo:['', [Validators.required]],
+      globalPrice: [0,[Validators.required]]
       });
   }
 
@@ -97,7 +167,7 @@ public tix : TixInterface ={
   sendTix(){
       this.submitted = true;
       if (this.ngFormAddtixs.invalid) {
-         this._uw.errorFormAddtixs=true;
+        this._uw.errorFormAddtixs=true;
       return;
         } 
       this._uw.errorFormAddtixs=false;
@@ -106,6 +176,17 @@ public tix : TixInterface ={
       this.tix = this.ngFormAddtixs.value;
       // this.tix.userd="a"+val;
       this.tix.status="activated";
+      if (this._uw.moccs){
+        this.tix.globalPrice=0;
+        this.tix.con=this.con;
+        this.tix.sin=this.sin;
+      }
+      if (this._uw.botas || this._uw.zapatos){
+        this.tix.price=this.tix.globalPrice;
+        
+      }
+      this.tix.check=this.checks;
+      this.tix.tallas=this.tallas;
       this.tix.images=this._uw.images;
       return this.dataApiService.saveTixFree(this.tix)
         .subscribe(
@@ -120,23 +201,38 @@ public tix : TixInterface ={
     }, 4000);
   }
   set():void{
-    if(this.ngFormAddtixs.value.category=='Botas y botines'){
-    this._uw.botas=true;
-     this._uw.moccs=false;
-    this._uw.zapatos=false;
-
-    }
-    if(this.ngFormAddtixs.value.category=='Moccs'){
-    this._uw.botas=false;
-    this._uw.moccs=true;
-    this._uw.zapatos=false;
-    }
-    if(this.ngFormAddtixs.value.category=='Zapatos'){
-    this._uw.botas=false;
-      this._uw.zapatos=true;
-      this._uw.moccs=false;
-    }
+     this._uw.typeSize=false;
+      this._uw.typeGlobal=false;  
+      this.setType();
   }
+  setType():void{
+      
+      if(this.ngFormAddtixs.value.category=='Botas y botines'){
+        this._uw.botas=true;
+        this._uw.moccs=false;
+        this._uw.zapatos=false;
+        this._uw.typeGlobal=true; 
+        this.tallas=this.tallasBotas;
+        this.iniciador(this.tallasBotas.length);
+      }  
+      if(this.ngFormAddtixs.value.category=='Moccs'){
+        this._uw.botas=false;
+        this._uw.moccs=true;
+        this._uw.zapatos=false; 
+        this._uw.typeSize=true;
+        this.tallas=this.tallasMoccs;
+        this.iniciador(this.tallasMoccs.length);
+        }
+      if(this.ngFormAddtixs.value.category=='Zapatos'){
+        this._uw.botas=false;
+        this._uw.zapatos=true;
+        this._uw.moccs=false;
+        this._uw.typeGlobal=true; 
+        this.tallas=this.tallasZapatos;
+        this.iniciador(this.tallasZapatos.length);      
+      }
+    }
+
  finish(){
     if (this._uw.errorFormAddtixs){
       this.sendTix();
@@ -160,7 +256,7 @@ public tix : TixInterface ={
   }
   onFileAdded(file: FilePreviewModel) {
     
-    file.fileName="http://localhost:80/imgApi2/server/local-storage/tixsImages/"+file.fileName;
+    file.fileName="http://192.168.1.2:80/imgApi2/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
     // this.images.push(file.fileName);
 

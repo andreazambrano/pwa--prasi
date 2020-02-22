@@ -13,12 +13,12 @@ export class TestappComponent implements OnInit {
 
   ngOnInit() {
   	this.loadAPI = new Promise(resolve => {
-          console.log("resolving promise...");
+          // console.log("resolving promise...");
           this.loadScript();
         });
   }
    public loadScript() {
-      console.log("preparing to load...");
+      // console.log("preparing to load...");
       let node = document.createElement("script");
       node.src = this.url;
       node.type = "text/javascript";

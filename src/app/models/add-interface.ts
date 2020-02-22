@@ -1,8 +1,9 @@
-export interface TixInterface{
+export interface AddInterface{
 	id?:string;	
 	address?:string;
 	altitud?:string;
 	cantD?:number;
+	cantidad?:number;
 	capacidad?:number;
 	category?:string;
 	check?:Array<boolean>;
@@ -16,6 +17,7 @@ export interface TixInterface{
 	disponibilidad?:string;
 	distancia?:string;
 	duracion?:string;
+	finalPrice?:number;
 	globalPrice?:number;
 	images?:Array<string>;
 	modelo?:string;

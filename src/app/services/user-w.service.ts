@@ -13,6 +13,7 @@ export class UserWService {
 	book:any={};
 	bookToCancel:any={};
 	botas:boolean=false;
+	car:any[]=[];
 	card:any={};
 	cardsResult:any[]=[];
 	editingTrek:boolean=false;
@@ -27,14 +28,18 @@ export class UserWService {
 	loaded:boolean=false;
 	moccs:boolean=false;
 	name:string;
+	numProd:number=0;
 	partner:boolean;
 	queue:any[]=[];
 	selectorA:boolean;
 	selectorB:boolean;
+	subTotal:number=0;
 	tixs:any[]=[];
 	totalBooks:number;
 	totalTixs:number;
 	type:string;
+	typeGlobal:boolean=false;
+	typeSize:boolean=false;
 	user:any={};
 	userd:string;
 	usersPending:boolean;

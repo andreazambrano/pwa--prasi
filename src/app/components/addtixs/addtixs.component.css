@@ -1,4 +1,5 @@
-button,html input[type=button],input[type=reset],input[type=submit] {
+/*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+*/button,html input[type=button],input[type=reset],input[type=submit] {
  width: 100px;
     background: #27AE60;
     font-weight: 700;
@@ -10,9 +11,15 @@ button,html input[type=button],input[type=reset],input[type=submit] {
     margin: 10px 5px
 }
 
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
 }
-.errorLabel{
-	color: red;
+
+.example-radio-button {
+  margin: 5px; 
+}
+.mat-radio-outer-circle{
+  left: -3px;
 }

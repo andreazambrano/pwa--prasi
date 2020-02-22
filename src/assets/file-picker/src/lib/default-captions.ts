@@ -2,8 +2,8 @@ import { UploaderCaptions } from "./uploader-captions";
 
 export const DefaultCaptions: UploaderCaptions = {
     dropzone: {
-        title: "Arrastra los archivos aqui",
-        or: "o",
+        title: "",
+        or: "",
         browse: "Buscar archivos"
     },
     cropper: {

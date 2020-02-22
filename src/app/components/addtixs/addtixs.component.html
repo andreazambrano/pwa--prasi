@@ -6,7 +6,7 @@
 					<div class="">
 						<div class="tr-single-header" style="border: 0px;">
 							<h3 class="dashboard-title">									
-								+ Producto. 		
+								+Agregar Producto. 		
 							</h3>
 						</div>
 						<div class=" "  >
@@ -28,13 +28,14 @@
 								</ngx-file-picker>									
 							</div>
 							<div class="col-md-9 col-xs-12">
+								
 								<form  class="form"[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
 											
 											<aw-wizard>
-												<aw-wizard-step stepTitle="Producto">
+												<aw-wizard-step stepTitle="">
 													<div class="row" > 
 												
-														<div class="col-md-3col-xs-12">
+														<div class="col-md-3 col-xs-12">
 															
 																<div class="form-group">
 																	<label for="productName">Título</label>
@@ -49,6 +50,25 @@
 																	</div>
 																</div>
 														</div>
+														<div class="col-md-4 col-xs-12">
+													<label>Categoria</label>
+													<div class="sl-box">
+														<select class="form-control wide"   id="category" formControlName="category" placeholder="Category" [(ngModel)]="tix.category"
+														[ngClass]="{ 'is-invalid': submitted && fval.category.errors }"
+														required (click)="setType()">
+															<option>Botas y botines</option>
+															<option>Moccs</option>
+															<option>Zapatos</option>
+															
+														</select>
+													</div>
+													<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
+															<div *ngIf="fval.category.errors.required" class="errorLabel">
+															* La categoria es requerida
+															</div>
+
+														</div>
+												</div>
 
 														<div class="col-md-12 col-xs-12">
 															<div class="form-group">
@@ -64,15 +84,64 @@
 																</div>
 															</div>
 														</div>
+														<div class="col-md-z col-xs-12">
+															<div class="form-group">
+																<label for="color">Color</label>
+															
+
+																<textarea class="form-control height-80" id="color" formControlName="color" placeholder="Descripción" [(ngModel)]="tix.color"
+																[ngClass]="{ 'is-invalid': submitted && fval.color.errors }"
+																required></textarea>
+
+																<div *ngIf="submitted && fval.color.errors" class="invalid-feedback">
+																	<div *ngIf="fval.color.errors.required" class="errorLabel">
+																	* El color es requerido.
+																	</div>
+
+																</div>
+															</div>
+														</div>
+														<div class="col-md-z col-xs-12">
+															<div class="form-group">
+																<label for="codigo">Codigo </label>
+															
+
+																<textarea class="form-control height-80" id="codigo" formControlName="codigo" placeholder="Descripción" [(ngModel)]="tix.codigo"
+																[ngClass]="{ 'is-invalid': submitted && fval.codigo.errors }"
+																required></textarea>
+
+																<div *ngIf="submitted && fval.codigo.errors" class="invalid-feedback">
+																	<div *ngIf="fval.codigo.errors.required" class="errorLabel">
+																	* El codigo es requerido.
+																	</div>
+
+																</div>
+															</div>
+														</div>
+														<div class="col-md-z col-xs-12">
+															<div class="form-group">
+																<label for="modelo">Modelo </label>
+															
+
+																<textarea class="form-control height-80" id="modelo" formControlName="modelo" placeholder="Descripción" [(ngModel)]="tix.modelo"
+																[ngClass]="{ 'is-invalid': submitted && fval.modelo.errors }"
+																required></textarea>
+
+																<div *ngIf="submitted && fval.modelo.errors" class="invalid-feedback">
+																	<div *ngIf="fval.modelo.errors.required" class="errorLabel">
+																	* El modelo es requerido.
+																	</div>
+
+																</div>
+															</div>
+														</div>
 
 
 
 														<div class="col-md-z col-xs-12">
 															<div class="form-group">
 																<label for="notes">Información extra </label>
-																<!-- <input type="text" class="form-control" id="notes" formControlName="notes" placeholder="Información extra" [(ngModel)]="tix.notes"
-																[ngClass]="{ 'is-invalid': submitted && fval.notes.errors }"
-																required> -->
+															
 
 																<textarea class="form-control height-80" id="notes" formControlName="notes" placeholder="Descripción" [(ngModel)]="tix.notes"
 																[ngClass]="{ 'is-invalid': submitted && fval.notes.errors }"
@@ -91,199 +160,75 @@
 													<button type="button" awNextStep>Sig.</button>
 												  </aw-wizard-step>
 
-												  <aw-wizard-step stepTitle="Tallas y precios" awOptionalStep>
-												      <div class="row" > 
-												      	<div class="col-md-12 col-xs-12">
-															<div class="col-md-4 col-xs-12">
-																
-																<mat-radio-group 
-																class="person-radio-group" aria-label="Select an option">
-  <mat-radio-button class="person-radio-button"value="1">Option 1</mat-radio-button>
-  <mat-radio-button value="2">Option 2</mat-radio-button>
-</mat-radio-group>
-																<div class="form-group">
-																	<label for="category">Categoría </label>  
-																	
-																	<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
-																		<div *ngIf="fval.category.errors.required" class="errorLabel">
-																		* La categoría es requerida
-																		</div>
-
-																	</div>
+												  <aw-wizard-step stepTitle="" awOptionalStep>
+												     <div class="row" > 	
+														<div class="col-md-4"  *ngIf="this._uw.botas" [hidden]="!this._uw.botas">
+															<label >Tallas disponibles</label>
+															<ul >
+																<li *ngFor="let talla of tallasBotas; index as i" >
+																	<span class="custom-checkbox"> 
+																		<!-- <input type="checkbox" id="i+1">
+ -->
+																			<input type="checkbox" id="{{check}}{{i}}" [(ngModel)]="checks[i]" [ngModelOptions]="{standalone: true}">
+																		
+																		<label for="i+1"></label>
+																	</span>{{talla}}
+																</li>
+															</ul>	
+														</div>
+														<div *ngIf="this.tix && this._uw.moccs" [hidden]="!this._uw.moccs">
+															<div *ngFor="let talla of tallasMoccs; index as i" >
+																<div class="col-md-4" *ngIf="i==0" >
+																	<label >Tallas disponibles</label>
+																</div>
+																<div class="col-md-3" *ngIf="i==0" >
+																	<label >Precio sin antideslizante</label>
+																</div>
+																<div class="col-md-3" *ngIf="i==0" >
+																	<label >Precio con antideslizante</label>
+																</div>
+																<div class="col-md-4" >
+																	<span class="custom-checkbox"> 
+																			<input type="checkbox" id="{{check}}{{i}}" [(ngModel)]="checks[i]" [ngModelOptions]="{standalone: true}">
+																			<label for="i+1"></label>
+																		</span>{{talla}}
+																</div>
+																<div class="col-md-3">
+																	<input type="text" class="form-control col-md-6" id="{{precio}}{{i}}" placeholder="0"  [(ngModel)]="sin[i]" [ngModelOptions]="{standalone: true}" [disabled]="!checks[i]"> 
+																	<label for="i+1"></label>
+																</div>
+																<div class="col-md-3">
+																	<input type="text" class="form-control col-md-6" id="{{precio2}}{{i}}" placeholder="0" [(ngModel)]="con[i]" [ngModelOptions]="{standalone: true}" [disabled]="!checks[i]">
+																	<label for="i+1"></label>
 																</div>
 															</div>
-														</div>	
-														
-											
-														<div class="col-md-4"  *ngIf="this._uw.botas" [hidden]="!this._uw.botas">
-															<ul >
-																<li>
-																	<span class="custom-checkbox"> 
-																		<input type="checkbox" id="1">
-																		<label for="1"></label>
-																	</span>18 (12 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="2">
-																		<label for="2"></label>
-																	</span>19 (12,50 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="3">
-																		<label for="3"></label>
-																	</span>20 (13 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="4">
-																		<label for="4"></label>
-																	</span>21 (14 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="5">
-																		<label for="5"></label>
-																	</span>22 (14,50 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="6">
-																		<label for="6"></label>
-																	</span>23 (15 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="7">
-																		<label for="7"></label>
-																	</span>24 (15,80 cm)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="8">
-																		<label for="8"></label>
-																	</span>25 (16,30 cm)
-																</li>
-																
-															</ul>	
 														</div>
-
-
-														<div class="col-md-4"  *ngIf="this._uw.moccs" [hidden]="!this._uw.moccs">
+														<div class="col-md-4"  *ngIf=" this._uw.zapatos" [hidden]="!this._uw.zapatos">
+															<label>Tallas disponibles</label>
 															<ul >
-																<li>
+																<li *ngFor="let talla of tallasZapatos; index as i" >
 																	<span class="custom-checkbox"> 
-																		<input type="checkbox" id="1">
-																		<label for="1"></label>
-																	</span>16 (0-3 meses)
+																		<input type="checkbox" id="i+1">
+																		<label for="i+1"></label>
+																	</span>{{talla}}
 																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="2">
-																		<label for="2"></label>
-																	</span>17 (3-6 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="3">
-																		<label for="3"></label>
-																	</span>18 (6-12 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="4">
-																		<label for="4"></label>
-																	</span>19 - 20 (12-18 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="5">
-																		<label for="5"></label>
-																	</span>21 - 22 (18-24 meses) 
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="6">
-																		<label for="6"></label>
-																	</span>de 24 a 30 meses (a pedido)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="7">
-																		<label for="7"></label>
-																	</span>de 30 a 36 meses (a pedido)
-																</li>
-																
-																
-															</ul>	
+															</ul>		
 														</div>
-
-
-														<div class="col-md-4"  *ngIf="this._uw.zapatos" [hidden]="!this._uw.zapatos">
-															<ul >
-																<li>
-																	<span class="custom-checkbox"> 
-																		<input type="checkbox" id="1">
-																		<label for="1"></label>
-																	</span>18 (6 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="2">
-																		<label for="2"></label>
-																	</span>19 (9 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="3">
-																		<label for="3"></label>
-																	</span>20 (1 año)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="4">
-																		<label for="4"></label>
-																	</span>21 (1 año 6 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="5">
-																		<label for="5"></label>
-																	</span>22 (2 años) 
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="6">
-																		<label for="6"></label>
-																	</span>23 (2 años 6 meses)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="7">
-																		<label for="7"></label>
-																	</span>24 (3 años)
-																</li>
-																<li>
-																	<span class="custom-checkbox">
-																		<input type="checkbox" id="7">
-																		<label for="7"></label>
-																	</span>25 (4 años)
-																</li>
-																
-															</ul>	
-														</div>
-											
-											
-
-
-															
+														<div class="col-md-3 col-xs-12"  [hidden]="this._uw.moccs" >
+															<div class="form-group">
+																<label for="globalPrice">Precio</label>
+																<input type="text" class="form-control" id="globalPrice" formControlName="globalPrice" 
+																placeholder="Precio" 
+																>
+															</div>
+														</div>		
 													</div>
+
 												    <button type="button" awPreviousStep>Ant.</button>
 												    <button type="button"  type="submit"  awNextStep>Sig.</button>
 												  </aw-wizard-step>
 												 
-												  <aw-wizard-step stepTitle="Fin">
+												  <aw-wizard-step stepTitle="">
 												    <div class="row">
 
 												    	<div class="col-md-12 text-center" *ngIf="this._uw.errorFormAddtixs">
@@ -315,7 +260,7 @@
 
 																<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
 																	<div *ngIf="fval.category.errors.required" class="errorLabel">
-																	* La categoría es reuqerida
+																	* La categoría es reqùerida
 																	</div>
 
 																</div>								

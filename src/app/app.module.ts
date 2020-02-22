@@ -84,6 +84,7 @@ import {MatNativeDateModule} from '@angular/material';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { TreksComponent } from './components/treks/treks.component';
 import { NavComponent } from './components/nav/nav.component';
