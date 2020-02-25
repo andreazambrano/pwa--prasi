@@ -65,16 +65,7 @@ export class PrasiproductdetailComponent implements OnInit {
       this.getDetails(this.route.snapshot.paramMap.get('id'));
 
     } 
-    public loadScript() {
-      // console.log("preparing to load...");
-      let node = document.createElement("script");
-      node.src = this.url;
-      node.type = "text/javascript";
-      node.async = true;
-      node.charset = "utf-8";
-      document.getElementsByTagName("head")[0].appendChild(node);
-    }
-
+ 
     public add(tix){
       if ( !this.seted && tix.category=='Moccs' ){
         tix.price=tix.sin[0];
@@ -127,6 +118,16 @@ if (this.plants=="Con planta antideslizante"){
       this.seted=true;
       }
     }
+       public loadScript() {
+      // console.log("preparing to load...");
+      let node = document.createElement("script");
+      node.src = this.url;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+
 
     public loadScript2() {
       // console.log("preparing to load 2...");

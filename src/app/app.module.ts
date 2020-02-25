@@ -138,6 +138,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { PrasiaboutComponent } from './components/prasiabout/prasiabout.component';
 import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasidevoluciones.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { PrasifilterComponent } from './components/prasifilter/prasifilter.component';
 
 
 
@@ -231,6 +233,8 @@ import { AdminComponent } from './components/admin/admin.component';
     PrasiaboutComponent,
     PrasidevolucionesComponent,
     AdminComponent,
+    FilterComponent,
+    PrasifilterComponent,
 
   ],
   imports: [
