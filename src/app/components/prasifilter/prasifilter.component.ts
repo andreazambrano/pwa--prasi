@@ -27,6 +27,7 @@ export class PrasifilterComponent implements OnInit {
     private formBuilder: FormBuilder
   	) { }
  loadAPI = null;
+   public seted = false;
 public tixs:TixInterface;
     url2 = "assets/assetsprasi/js/main.js";
     url = "assets/assetsprasi/js/plugins.js";
