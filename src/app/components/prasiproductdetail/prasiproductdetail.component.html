@@ -98,26 +98,26 @@
 									
 								
 									
-									<div class="shop-product__price mb-30" *ngIf="tix.category=='Moccs'">
-										<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
+									<div class="shop-product__price mb-30 " *ngIf="tix.category=='Moccs'">
+										<span class="main-price discounted precioModificado" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
 									
-										<span  class="discounted-price" *ngIf="!tix.discount" [hidden]="seted"> Desde $ {{tix.sin[0]}}</span>
+										<span  class="discounted-price precioModificado" *ngIf="!tix.discount" [hidden]="seted"> Desde $ {{tix.sin[0]}}</span>
 									
-										<span  class="discounted-price" *ngIf="tix.discount" [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
+										<span  class="discounted-price precioModificado" *ngIf="tix.discount" [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
 										
-										<span class="main-price discounted" *ngIf="tix.discount && tix.price "  [hidden]="seted">$ {{tix.price}}</span >
+										<span class="main-price discounted precioModificado" *ngIf="tix.discount && tix.price "  [hidden]="seted">$ {{tix.price}}</span >
 									
-										<span  class="discounted-price" *ngIf="!tix.discount && tix.price" >$ {{tix.price}}</span>
-										<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
+										<span  class="discounted-price precioModificado" *ngIf="!tix.discount && tix.price" >$ {{tix.price}}</span>
+										<span class="discounted-price precioModificado" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
 									</div>
 
 
 									<div class="shop-product__price mb-30" *ngIf="tix.category!='Moccs'">
 										
-										<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
+										<span class="main-price discounted precioModificado" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
 
-										<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.price * tix.discount/100)}}</span >
-										<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
+										<span class="discounted-price precioModificado" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.price * tix.discount/100)}}</span >
+										<span class="discounted-price precioModificado" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
 									</div>
 
 
@@ -136,7 +136,7 @@
 											<div class="sl-box">
 														<select class="form-control wide"   id="plants" placeholder="Tipo de planta" [(ngModel)]="plants" [ngModelOptions]="{standalone: true}"
 														
-														required (click)="setPlants(tix)">
+														required (click)="setPlants(tix)" style="font-size: 2rem;">
 															<option>Sin planta antideslizante</option>
 															<option>Con planta antideslizante</option>												
 														</select>
@@ -159,7 +159,7 @@
 																<li></li>
 															</ul>
 														</div>
-														<div class="col-md-11 col-xs-6" >
+														<div class="col-md-10 col-xs-6" >
 															<span class="single-size" (click)="setSize(tix,i)">{{item}}
 															</span>	
 														</div>

@@ -61,3 +61,4 @@ export { PrasicontactComponent } from "./prasicontact/prasicontact.component";
 export { PrasiaboutComponent } from "./prasiabout/prasiabout.component";
 export { PrasidevolucionesComponent } from "./prasidevoluciones/prasidevoluciones.component";
 export { AdminComponent } from "./admin/admin.component";
+export { PrasifilterComponent } from "./prasifilter/prasifilter.component";

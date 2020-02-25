@@ -49,9 +49,7 @@ export class AddtixsComponent implements OnInit {
   '17 (3-6 meses)',
   '18 (6-12 meses)',
   '19 - 20 (12-18 meses)',
-  '21 - 22 (18-24 meses)',
-  'de 24 a 30 meses (a pedido)',
-  'de 30 a 36 meses (a pedido)'
+  '21 - 22 (18-24 meses)'
   ];
 
   tallasZapatos: string[]=[
@@ -150,7 +148,6 @@ public tix : TixInterface ={
     this.ngFormAddtixs = this.formBuilder.group({
       productName: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      notes: ['', [Validators.required]],
       category: ['', [Validators.required]],
       color:['', [Validators.required]],
       codigo:['', [Validators.required]],

@@ -89,7 +89,7 @@
 																<label for="color">Color</label>
 															
 
-																<textarea class="form-control height-80" id="color" formControlName="color" placeholder="Descripción" [(ngModel)]="tix.color"
+																<textarea class="form-control height-80" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
 																[ngClass]="{ 'is-invalid': submitted && fval.color.errors }"
 																required></textarea>
 
@@ -106,7 +106,7 @@
 																<label for="codigo">Codigo </label>
 															
 
-																<textarea class="form-control height-80" id="codigo" formControlName="codigo" placeholder="Descripción" [(ngModel)]="tix.codigo"
+																<textarea class="form-control height-80" id="codigo" formControlName="codigo" placeholder="Codigo" [(ngModel)]="tix.codigo"
 																[ngClass]="{ 'is-invalid': submitted && fval.codigo.errors }"
 																required></textarea>
 
@@ -123,7 +123,7 @@
 																<label for="modelo">Modelo </label>
 															
 
-																<textarea class="form-control height-80" id="modelo" formControlName="modelo" placeholder="Descripción" [(ngModel)]="tix.modelo"
+																<textarea class="form-control height-80" id="modelo" formControlName="modelo" placeholder="Modelo" [(ngModel)]="tix.modelo"
 																[ngClass]="{ 'is-invalid': submitted && fval.modelo.errors }"
 																required></textarea>
 
@@ -143,16 +143,15 @@
 																<label for="notes">Información extra </label>
 															
 
-																<textarea class="form-control height-80" id="notes" formControlName="notes" placeholder="Descripción" [(ngModel)]="tix.notes"
-																[ngClass]="{ 'is-invalid': submitted && fval.notes.errors }"
-																required></textarea>
+																<textarea class="form-control height-80" id="notes" formControlName="notes" placeholder="Información extra" [(ngModel)]="tix.notes"
+																></textarea>
 
-																<div *ngIf="submitted && fval.notes.errors" class="invalid-feedback">
+																<!-- <div *ngIf="submitted && fval.notes.errors" class="invalid-feedback">
 																	<div *ngIf="fval.notes.errors.required" class="errorLabel">
 																	* La información es requerida.
 																	</div>
 
-																</div>
+																</div> -->
 															</div>
 														</div>
 															

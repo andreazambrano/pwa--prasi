@@ -73,6 +73,20 @@ export class DataApiService {
 		return (this.tixs = this.http.get(url_api));
 
 	}
+	// getTixsFilter(category:string){
+	// 	let category=category;
+	// 	const url_api=`https://db.andesproadventures.com:3018/api/tixes?filter[where][and][1][category]=${category}`;
+	// 	// return (this.cards = this.http.get(url_api));
+	// 	return (this.tixs = this.http.get(url_api));
+	// }
+
+	getTixsFilter(cat:string){
+		let cate = cat;
+		const url_api = "https://db.andesproadventures.com:3018/api/tixes?filter[where][category]="+cate;
+		return (this.tixs = this.http.get(url_api));
+
+	}
+
 	getTixById(id:string){
 		//console.log(id);
 		let indice = id;

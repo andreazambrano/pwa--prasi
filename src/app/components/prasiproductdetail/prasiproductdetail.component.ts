@@ -117,6 +117,10 @@ if (this.plants=="Con planta antideslizante"){
       // console.log(i);
       this.seted=true;
       }
+       if (tix.category=="Botas y botines" || tix.category=="Zapatos" ){  
+        this.tix.price=tix.globalPrice;
+        this.indiceTalla=i;
+      }
     }
        public loadScript() {
       // console.log("preparing to load...");
