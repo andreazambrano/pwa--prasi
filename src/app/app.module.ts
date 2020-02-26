@@ -140,6 +140,7 @@ import { PrasidevolucionesComponent } from './components/prasidevoluciones/prasi
 import { AdminComponent } from './components/admin/admin.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PrasifilterComponent } from './components/prasifilter/prasifilter.component';
+import { PrasishopcartComponent } from './components/prasishopcart/prasishopcart.component';
 
 
 
@@ -235,6 +236,7 @@ import { PrasifilterComponent } from './components/prasifilter/prasifilter.compo
     AdminComponent,
     FilterComponent,
     PrasifilterComponent,
+    PrasishopcartComponent,
 
   ],
   imports: [
