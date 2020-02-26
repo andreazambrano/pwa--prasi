@@ -46,10 +46,10 @@
 								<div class="site-main-nav d-none d-lg-block">
 									<nav class="site-nav center-menu">
 										<ul>
-											<li class="menu-item-has-children"><a href="shop-left-sidebar.html">Tienda</a>
+											<li class="menu-item-has-children"><a >Tienda</a>
 												<ul class="sub-menu single-column-menu">
                                                  <!--    <li><a href="element-recent-products.html">Nueva Coleccion</a></li> -->
-                                                    <li><a hrouterLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
+                                                    <li><a routerLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
                                                     <li><a routerLink="/prasifilter/Zapatos">Zapatos</a></li>
                                                     <li><a routerLink="/prasifilter/Moccs">Moccs</a></li>
                                                 </ul>
@@ -77,6 +77,13 @@
 							
 							<div class="header-right-icons d-flex justify-content-end align-items-center h-100">
 								<!--=======  single-icon  =======-->
+
+								<div class="single-icon user-login"*ngIf="this._uw.isLogged">
+									<a routerLink="addtixs" data-tippy="Agregar producto" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true">
+										<i class="ion-plus" style="color: #d3122a;"></i>
+									</a>
+								</div>
+
 								
 								<div class="single-icon search">
 									<a href="javascript:void(0)" id="search-icon">
@@ -137,7 +144,7 @@
 							</button><!--Site Mobile Menu Toggle End-->
 							<ul class="dl-menu dl-menu-toggle">
 								
-								<li><a href="#">Tienda</a>
+								<li><a >Tienda</a>
 									<ul class="dl-submenu">
 										<!-- <li><a href="element-recent-products.html">Nueva Coleccion</a></li> -->
                                         <li><a routerLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
@@ -146,7 +153,7 @@
 									</ul>
 								</li>
 								
-								<li><a href="#">Prasi</a>
+								<li><a >Prasi</a>
 									<ul class="dl-submenu">
 										<li><a routerLink="prasiabout">Quienes somos</a></li>
                                         <li><a >Tabla de tallas</a></li>

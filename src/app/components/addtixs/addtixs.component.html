@@ -1,8 +1,8 @@
-<section class="dashboard white-bg padd-0 mrg-top-50 " style="min-height: 600px; padding-top: 0px;">
+<section class="white-bg padd-0 mrg-top-0  mb-80  " style="min-height: 600px; padding-top: 0px;">
 	<div class="container-fluid" >
 		<div class="">
 			<div class="">
-				<div class=" mrg-0 mrg-top-20">
+				<div class=" mrg-0 mrg-top-0">
 					<div class="">
 						<div class="tr-single-header" style="border: 0px;">
 							<h3 class="dashboard-title">									
@@ -11,7 +11,7 @@
 						</div>
 						<div class=" "  >
 							<div class="col-md-3 col-xs-12" style="
-								padding: 15px 15px 15px 15px; background:#fafbfd!important; border-radius: 10px;
+								padding: 15px 15px 15px 15px; background:#fff!important; border-radius: 10px;
 								/*margin-left: 30px;*/
 								">
 								<ngx-file-picker
@@ -35,7 +35,7 @@
 												<aw-wizard-step stepTitle="">
 													<div class="row" > 
 												
-														<div class="col-md-3 col-xs-12">
+														<div class="col-md-6 col-xs-12">
 															
 																<div class="form-group">
 																	<label for="productName">Título</label>
@@ -50,7 +50,7 @@
 																	</div>
 																</div>
 														</div>
-														<div class="col-md-4 col-xs-12">
+														<div class="col-md-3 col-xs-12">
 													<label>Categoria</label>
 													<div class="sl-box">
 														<select class="form-control wide"   id="category" formControlName="category" placeholder="Category" [(ngModel)]="tix.category"
@@ -84,14 +84,18 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-z col-xs-12">
+														<div class="col-md-6 col-xs-12">
 															<div class="form-group">
 																<label for="color">Color</label>
 															
 
-																<textarea class="form-control height-80" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
+																
+
+
+																<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
 																[ngClass]="{ 'is-invalid': submitted && fval.color.errors }"
-																required></textarea>
+																required>
+
 
 																<div *ngIf="submitted && fval.color.errors" class="invalid-feedback">
 																	<div *ngIf="fval.color.errors.required" class="errorLabel">
@@ -101,14 +105,15 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-z col-xs-12">
+														<div class="col-md-3 col-xs-12">
 															<div class="form-group">
 																<label for="codigo">Codigo </label>
-															
-
-																<textarea class="form-control height-80" id="codigo" formControlName="codigo" placeholder="Codigo" [(ngModel)]="tix.codigo"
+															<input type="text" class="form-control"  id="codigo" formControlName="codigo" placeholder="Codigo" [(ngModel)]="tix.codigo"
 																[ngClass]="{ 'is-invalid': submitted && fval.codigo.errors }"
-																required></textarea>
+																required>
+
+
+																
 
 																<div *ngIf="submitted && fval.codigo.errors" class="invalid-feedback">
 																	<div *ngIf="fval.codigo.errors.required" class="errorLabel">
@@ -118,14 +123,16 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-z col-xs-12">
+														<div class="col-md-3 col-xs-12">
 															<div class="form-group">
 																<label for="modelo">Modelo </label>
-															
-
-																<textarea class="form-control height-80" id="modelo" formControlName="modelo" placeholder="Modelo" [(ngModel)]="tix.modelo"
+																	<input type="text" class="form-control"  id="modelo" formControlName="modelo" placeholder="Modelo" [(ngModel)]="tix.modelo"
 																[ngClass]="{ 'is-invalid': submitted && fval.modelo.errors }"
-																required></textarea>
+																required>
+
+
+
+															
 
 																<div *ngIf="submitted && fval.modelo.errors" class="invalid-feedback">
 																	<div *ngIf="fval.modelo.errors.required" class="errorLabel">
@@ -138,22 +145,7 @@
 
 
 
-														<div class="col-md-z col-xs-12">
-															<div class="form-group">
-																<label for="notes">Información extra </label>
-															
-
-																<textarea class="form-control height-80" id="notes" formControlName="notes" placeholder="Información extra" [(ngModel)]="tix.notes"
-																></textarea>
-
-																<!-- <div *ngIf="submitted && fval.notes.errors" class="invalid-feedback">
-																	<div *ngIf="fval.notes.errors.required" class="errorLabel">
-																	* La información es requerida.
-																	</div>
-
-																</div> -->
-															</div>
-														</div>
+														
 															
 													</div>								
 													<button type="button" awNextStep>Sig.</button>
@@ -220,7 +212,23 @@
 																placeholder="Precio" 
 																>
 															</div>
-														</div>		
+														</div>	
+														<div class="col-md-12 col-xs-12">
+															<div class="form-group">
+																<label for="notes">Información extra </label>
+															
+
+																<textarea class="form-control height-80" id="notes"  placeholder="Información extra" [(ngModel)]="tix.notes" [ngModelOptions]="{standalone: true}"
+																></textarea>
+
+																<!-- <div *ngIf="submitted && fval.notes.errors" class="invalid-feedback">
+																	<div *ngIf="fval.notes.errors.required" class="errorLabel">
+																	* La información es requerida.
+																	</div>
+
+																</div> -->
+															</div>
+														</div>	
 													</div>
 
 												    <button type="button" awPreviousStep>Ant.</button>
@@ -249,12 +257,7 @@
 
 																</div>
 
-																<div *ngIf="submitted && fval.notes.errors" class="invalid-feedback">
-																	<div *ngIf="fval.notes.errors.required" class="errorLabel">
-																	* La información del producto es requerida.
-																	</div>
-
-																</div>
+															
 
 
 																<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
