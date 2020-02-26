@@ -226,6 +226,7 @@ public tix : TixInterface ={
         this._uw.moccs=false;
         this._uw.typeGlobal=true; 
         this.tallas=this.tallasZapatos;
+        console.log("ZAPATOS!");
         this.iniciador(this.tallasZapatos.length);      
       }
     }

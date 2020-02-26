@@ -25,7 +25,7 @@
                         <div class="filter-icons">
                             <!--=======  filter dropdown  =======-->
                             
-                            <div class="single-icon filter-dropdown">
+                           <!--  <div class="single-icon filter-dropdown">
                                 <select class="nice-select">
                                     <option value="0">Default sorting</option>
                                     <option value="1">Sort ny popularity</option>
@@ -34,7 +34,7 @@
                                     <option value="0">Sort by price: low to high</option>
                                     <option value="0">Sort by price: high to low</option>
                                 </select>
-                            </div>
+                            </div> -->
                             
                             <!--=======  End of filter dropdown  =======-->
 
@@ -46,6 +46,7 @@
 								<a data-target="three-column" href="javascript:void(0)"><i class="ti-layout-grid2-alt"></i></a>
 								<a data-target="list" href="javascript:void(0)"><i class="ti-view-list"></i></a>
                             </div>
+
                             
                             <!--=======  End of grid icons  =======-->
 
@@ -220,12 +221,12 @@
 							<div class="single-sidebar-widget mb-40">
 								<!--=======  search widget  =======-->
 								
-								<div class="search-widget">
+								<!-- <div class="search-widget">
 									<form action="shop-left-sidebar.html#">
 										<input type="search" placeholder="Search products ...">
 										<button type="button"><i class="ion-android-search"></i></button>
 									</form>
-								</div>
+								</div> -->
 								
 								<!--=======  End of search widget  =======-->
 							</div>
@@ -266,7 +267,7 @@
 
 							<!--=======  single sidebar widget  =======-->
 							
-							<div class="single-sidebar-widget mb-40">
+							<!-- <div class="single-sidebar-widget mb-40">
 								<h2 class="single-sidebar-widget--title">Filters</h2>
 								<div class="sidebar-price">
 									<div id="price-range"></div>
@@ -275,7 +276,7 @@
 										<a class="price-range-button" href="shop-left-sidebar.html#"><i class="ion-android-funnel"></i> Filter</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							
 							<!--=======  End of single sidebar widget  =======-->
 
@@ -436,15 +437,23 @@
 			
 									<div class="single-product__floating-badges">
 										<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
-							<span class="onsale" *ngIf="tix.new">Nuevo</span>
+										<span class="onsale" *ngIf="tix.new">Nuevo</span>
 									</div>
 									
-									<div class="single-product__floating-icons">
-										<span class="wishlist"><a href="shop-left-sidebar.html#" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" ><i class="ion-android-favorite-outline"></i></a></span>
-			
-										<span class="compare"><a href="shop-left-sidebar.html#" data-tippy="Compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" ><i class="ion-ios-shuffle-strong"></i></a></span>
-			
-										<span class="quickview"><a class="cd-trigger" href="shop-left-sidebar.html#qv-1"  data-tippy="Quick View" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  ><i class="ion-ios-search-strong"></i></a></span>
+									<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
+										<span class="wishlist">
+											<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" >
+												<i class="ion-edit">
+													
+												</i>
+											</a>
+										</span>
+										<span class="quickview" >
+											<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  >
+												<i class="fa fa-trash">
+						
+												</i>
+											</a></span>
 									</div>
 			
 									
@@ -479,41 +488,34 @@
 									<!--=======  single product image  =======-->
 									
 									<div class="single-product__image">
-										<a class="image-wrap" href="shop-product-basic.html">
-											<img src="assets/assetsprasi/images/products/cloth-1-1-600x800.jpg" class="img-fluid" alt="">
-											<img src="assets/assetsprasi/images/products/cloth-1-2-600x800.jpg" class="img-fluid" alt="">
-										</a>
-				
-										<div class="single-product__floating-badges">
-											<span class="onsale">-10%</span>
-											<span class="hot">hot</span>
-										</div>
-
-										<div class="single-product__floating-icons">
-											<span class="wishlist"><a href="shop-left-sidebar.html#" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "bottom" ><i class="ion-android-favorite-outline"></i></a></span>
-				
-											<span class="compare"><a href="shop-left-sidebar.html#" data-tippy="Compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "bottom" ><i class="ion-ios-shuffle-strong"></i></a></span>
-				
-											<span class="quickview"><a class="cd-trigger" href="shop-left-sidebar.html#qv-1"  data-tippy="Quick View" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "bottom"  ><i class="ion-ios-search-strong"></i></a></span>
-										</div>
-
-										<div class="single-product__variations">
-											<div class="size-container mb-5">
-												<span class="size">L</span>
-												<span class="size">M</span>
-												<span class="size">S</span>
-												<span class="size">XS</span>
-											</div>
-											<div class="color-container">
-												<span class="black"></span>
-												<span class="blue"></span>
-												<span class="yellow"></span>
-											</div>
-											<!-- <a href="#" class="clear-link">clear</a> -->
-										</div>
-										
+									<a class="image-wrap" routerLink="/prasiproductdetail/{{tix.id}}">
+										<img src="{{tix.images[0]}}" class="img-fluid" alt="">
+										<img src="{{tix.images[1]}}"  class="img-fluid" alt="">
+									</a>
+			
+									<div class="single-product__floating-badges">
+										<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
+										<span class="onsale" *ngIf="tix.new">Nuevo</span>
 									</div>
 									
+									<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
+										<span class="wishlist">
+											<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" >
+												<i class="ion-edit">
+													
+												</i>
+											</a>
+										</span>
+										<span class="quickview" >
+											<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  >
+												<i class="fa fa-trash">
+						
+												</i>
+											</a></span>
+									</div>
+			
+									
+								</div>
 									<!--=======  End of single product image  =======-->
 				
 									<!--=======  single product content  =======-->
@@ -521,16 +523,23 @@
 									<div class="single-product__content">
 											
 										<div class="title">
-											<h3> <a href="shop-product-basic.html">High-waist Trousers</a></h3>
+											<h3> <a href="shop-product-basic.html">{{tix.productName}}</a></h3>
 										</div>
-										<div class="price">
-											<span class="main-price discounted">$160.00</span>
-											<span class="discounted-price">$180.00</span>
-										</div>
-										<p class="short-desc"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium consequuntur voluptatem ad molestiae. Expedita nesciunt quam totam, sapiente eveniet consectetur voluptas quas harum impedit quia quibusdam tempora ab facilis. Non assumenda veritatis,
+										<div class="price" *ngIf="tix.category=='Moccs'">
+							<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
+							<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
+							<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
+						</div>
+						<div class="price" *ngIf="tix.category!='Moccs'">
+							
+							<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
+							<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
+							<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
+						</div>
+										<p class="short-desc"> {{tix.description}}
 										</p>
 
-										<a href="shop-left-sidebar.html#" class="Prasi-button Prasi-button--medium">ADD TO CART</a>
+										<a  class="Prasi-button Prasi-button--medium"routerLink="/prasiproductdetail/{{tix.id}}">mas info</a>
 										
 									</div>
 									
