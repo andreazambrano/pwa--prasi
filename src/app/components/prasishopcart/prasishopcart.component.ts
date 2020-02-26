@@ -61,6 +61,7 @@ setEnvio(){
 	for (var i = 0; i < this.costosEnvio.length; i++) {
 		if (this.destino==this.localidades[i]){
 			this.envio=this.costosEnvio[i];
+			this._uw.total=this._uw.subTotal+this.costosEnvio[i];
 		}
 	}
 }

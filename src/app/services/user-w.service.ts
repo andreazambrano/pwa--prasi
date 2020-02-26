@@ -35,6 +35,7 @@ export class UserWService {
 	selectorB:boolean;
 	subTotal:number=0;
 	tixs:any[]=[];
+	total:number=0;
 	totalBooks:number;
 	totalTixs:number;
 	type:string;
