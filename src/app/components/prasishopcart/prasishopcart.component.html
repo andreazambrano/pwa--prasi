@@ -1,11 +1,11 @@
 	<div class="shopping-cart-area mb-130">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 mb-30">
+				<div class="col-lg-6 mb-30">
 					<!--=======  cart table  =======-->
 					
 					<div class="cart-table-container">
-						<table class="cart-table">
+						<table class="cart-table" style="border-right: 0px;border-left: 0px;">
 							<thead>
 								<tr>
 									<th class="product-name" colspan="2">Producto</th>
@@ -51,19 +51,20 @@
 					
 					<!--=======  End of cart table  =======-->
 				</div>
-				<div class="col-lg-12 mb-80">
+				<div class="col-lg-6 mb-20">
 					<!--=======  coupon area  =======-->
 					
 					<div class="cart-coupon-area pb-30">
 						<div class="row align-items-center">
-							<div class="col-lg-6 mb-md-30 mb-sm-30">
+						
+							<div class="col-lg-12 mb-md-30 mb-sm-30">
 								<!--=======  coupon form  =======-->
 								
 								<div class="Prasi-form coupon-form">
 									<form action="shop-cart.html#">
 										<div class="row">
 											<div class="col-md-7 mb-sm-10">
-												<input type="text" placeholder="Enter your coupon code">
+												<input type="text" placeholder="Ingrese su código de cupón">
 											</div>
 											<div class="col-md-5">
 												<button class="Prasi-button Prasi-button--medium">Aplicar cupon</button>
@@ -75,20 +76,16 @@
 								<!--=======  End of coupon form  =======-->
 							</div>
 
+
 							<div class="col-lg-6 text-left text-lg-right">
 								<!--=======  update cart button  =======-->
 								
-								<button class="Prasi-button Prasi-button--medium">actualización de la compra</button>
+							
 								
 								<!--=======  End of update cart button  =======-->
 							</div>
 						</div>
 					</div>
-					
-					<!--=======  End of coupon area  =======-->
-				</div>
-
-				<div class="col-xl-4 offset-xl-8 col-lg-5 offset-lg-7">
 					<div class="cart-calculation-area">
 						<h2 class="mb-40">Total</h2>
 
@@ -97,8 +94,25 @@
 								<th>SUBTOTAL</th>
 								<td class="subtotal">$100.00</td>
 							</tr>
+							
 							<tr>
-								<th>Calcular envio</th>
+								<th>DESTINO</th>
+								<td>
+									<div class="sl-box">
+										<select class="form-control wide"   id="destino" placeholder="Destino" (click)="setEnvio()"
+										[(ngModel)]="destino" [ngModelOptions]="{standalone: true}"
+										
+										required style="font-size: 2rem;">
+											<option  *ngFor="let option of this.localidades ; index as i"  >{{option}}</option>
+																							
+										</select>
+									</div>
+								</td>
+							
+							</tr>
+							<tr>
+								<th>COTSO POR ENVIO</th>
+								<td class="subtotal">$ {{this.envio}}</td>
 							</tr>
 							<tr>
 								<th>TOTAL</th>
@@ -110,7 +124,13 @@
 							<button class="Prasi-button Prasi-button--medium">Finalizar compra</button>
 						</div>
 					</div>
+					
+					<!--=======  End of coupon area  =======-->
 				</div>
+
+			<!-- 	<div class="col-xl-4 offset-xl-8 col-lg-5 offset-lg-7">
+					
+				</div> -->
 			</div>
 		</div>
 	</div>
