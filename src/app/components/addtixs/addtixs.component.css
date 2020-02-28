@@ -1,7 +1,7 @@
 /*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 */button,html input[type=button],input[type=reset],input[type=submit] {
  width: 100px;
-    background: #27AE60;
+    background: #000;
     font-weight: 700;
     color: #fff;
     border: 0;

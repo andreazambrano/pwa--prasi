@@ -102,7 +102,7 @@ public tix : TixInterface ={
       productName:"",
       description:"",
       notes:"",
-      category:"",
+      category:"categoría",
       check:[],
       codigo:"",
       color:"",

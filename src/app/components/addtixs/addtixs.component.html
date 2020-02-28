@@ -9,7 +9,7 @@
 								+Agregar Producto. 		
 							</h3>
 						</div>
-						<div class=" "  >
+						<div class="mrg-top-30 "  >
 							<div class="col-md-3 col-xs-12" style="
 								padding: 15px 15px 15px 15px; background:#fff!important; border-radius: 10px;
 								/*margin-left: 30px;*/
@@ -28,17 +28,17 @@
 								</ngx-file-picker>									
 							</div>
 							<div class="col-md-9 col-xs-12">
-								
-								<form  class="form"[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
+								<div class="Prasi-form login-form--register checkout-form">
+								<form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
 											
-											<aw-wizard>
+											<aw-wizard [navBarLayout]="'large-empty-symbols'">
 												<aw-wizard-step stepTitle="">
 													<div class="row" > 
 												
 														<div class="col-md-6 col-xs-12">
 															
 																<div class="form-group">
-																	<label for="productName">Título</label>
+																	<!-- <label for="productName">Título</label> -->
 																	<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Titulo" [(ngModel)]="tix.productName"
 																	[ngClass]="{ 'is-invalid': submitted && fval.productName.errors }"
 																	required>
@@ -50,29 +50,11 @@
 																	</div>
 																</div>
 														</div>
-														<div class="col-md-3 col-xs-12">
-													<label>Categoria</label>
-													<div class="sl-box">
-														<select class="form-control wide"   id="category" formControlName="category" placeholder="Category" [(ngModel)]="tix.category"
-														[ngClass]="{ 'is-invalid': submitted && fval.category.errors }"
-														required (click)="setType()">
-															<option>Botas y botines</option>
-															<option>Moccs</option>
-															<option>Zapatos</option>
-															
-														</select>
-													</div>
-													<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
-															<div *ngIf="fval.category.errors.required" class="errorLabel">
-															* La categoria es requerida
-															</div>
-
-														</div>
-												</div>
+														
 
 														<div class="col-md-12 col-xs-12">
 															<div class="form-group">
-																<label for="description">Descripción</label>
+																<!-- <label for="description">Descripción</label> -->
 																<textarea class="form-control height-80" id="description" formControlName="description" placeholder="Descripción" [(ngModel)]="tix.description"
 																[ngClass]="{ 'is-invalid': submitted && fval.description.errors }"
 																required></textarea>
@@ -86,7 +68,7 @@
 														</div>
 														<div class="col-md-6 col-xs-12">
 															<div class="form-group">
-																<label for="color">Color</label>
+																<!-- <label for="color">Color</label> -->
 															
 
 																
@@ -107,7 +89,7 @@
 														</div>
 														<div class="col-md-3 col-xs-12">
 															<div class="form-group">
-																<label for="codigo">Codigo </label>
+																<!-- <label for="codigo">Codigo </label> -->
 															<input type="text" class="form-control"  id="codigo" formControlName="codigo" placeholder="Codigo" [(ngModel)]="tix.codigo"
 																[ngClass]="{ 'is-invalid': submitted && fval.codigo.errors }"
 																required>
@@ -125,7 +107,7 @@
 														</div>
 														<div class="col-md-3 col-xs-12">
 															<div class="form-group">
-																<label for="modelo">Modelo </label>
+																<!-- <label for="modelo">Modelo </label> -->
 																	<input type="text" class="form-control"  id="modelo" formControlName="modelo" placeholder="Modelo" [(ngModel)]="tix.modelo"
 																[ngClass]="{ 'is-invalid': submitted && fval.modelo.errors }"
 																required>
@@ -142,6 +124,24 @@
 																</div>
 															</div>
 														</div>
+														<div class="col-md-3 col-xs-12">
+													<label style="text-transform: lowercase;">Categoría</label>
+													<!-- <div class="sl-box"> -->
+														<select    id="category" formControlName="category" [(ngModel)]="tix.category"
+														[ngClass]="{ 'is-invalid': submitted && fval.category.errors }"
+														required (click)="setType()" class="nice-select" >
+															<option>Botas y botines</option>
+															<option>Moccs</option>
+															<option>Zapatos</option>
+														</select>
+													<!-- </div> -->
+													<div *ngIf="submitted && fval.category.errors" class="invalid-feedback">
+															<div *ngIf="fval.category.errors.required" class="errorLabel">
+															* La categoria es requerida
+															</div>
+
+														</div>
+												</div>
 
 
 
@@ -151,7 +151,7 @@
 													<button type="button" awNextStep>Sig.</button>
 												  </aw-wizard-step>
 
-												  <aw-wizard-step stepTitle="" awOptionalStep>
+												  <aw-wizard-step awOptionalStep stepTitle="">
 												     <div class="row" > 	
 														<div class="col-md-4"  *ngIf="this._uw.botas" [hidden]="!this._uw.botas">
 															<label >Tallas disponibles</label>
@@ -215,7 +215,7 @@
 														</div>	
 														<div class="col-md-12 col-xs-12">
 															<div class="form-group">
-																<label for="notes">Información extra </label>
+																<!-- <label for="notes">Información extra </label> -->
 															
 
 																<textarea class="form-control height-80" id="notes"  placeholder="Información extra" [(ngModel)]="tix.notes" [ngModelOptions]="{standalone: true}"
@@ -280,7 +280,9 @@
 												    <button type="button" (click)="finish()">Guardar</button>
 												  </aw-wizard-step>
 											</aw-wizard>
-										</form>							</div>	
+										</form>							
+									</div>	
+								</div>	
 						</div>
 					</div>
 				</div>

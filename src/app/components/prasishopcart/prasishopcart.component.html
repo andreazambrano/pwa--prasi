@@ -99,10 +99,10 @@
 								<th>DESTINO</th>
 								<td>
 									<div class="sl-box">
-										<select class="form-control wide"   id="destino" placeholder="Destino" (click)="setEnvio()"
+										<select    id="destino" placeholder="Destino" (click)="setEnvio()"
 										[(ngModel)]="destino" [ngModelOptions]="{standalone: true}"
 										
-										required style="font-size: 2rem;">
+										required class="nice-select" >
 											<option  *ngFor="let option of this.localidades ; index as i"  >{{option}}</option>
 																							
 										</select>

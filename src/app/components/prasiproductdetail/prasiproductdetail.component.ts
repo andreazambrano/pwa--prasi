@@ -50,7 +50,7 @@ export class PrasiproductdetailComponent implements OnInit {
     ngOnInit() {
     
       this.ngFormAddToCar = this.formBuilder.group({
-        cantidad:['',[Validators.required]]
+        cantidad:[1,[Validators.required]]
         // checked:[true,[]]
       });
       this.ngFormAddToCar.value.cantidad=1;
