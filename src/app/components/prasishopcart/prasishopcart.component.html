@@ -17,7 +17,7 @@
 							</thead>
 
 							<tbody>
-								<tr *ngFor="let tix of _uw.car">
+								<tr *ngFor="let tix of _uw.car;let i = index">
 									<td class="product-thumbnail">
 										<a href="shop-product-basic.html">
 											<img src="{{tix.images[0]}}"  class="img-fluid" alt="">
@@ -39,7 +39,7 @@
 									<td class="total-price"><span class="price">${{tix.finalPrice * tix.cantidad}}</span></td>
 
 									<td class="product-remove">
-										<a href="shop-cart.html#">
+										<a (click)="remove(i)">
 											<i class="ion-android-close"></i>
 										</a>
 									</td>

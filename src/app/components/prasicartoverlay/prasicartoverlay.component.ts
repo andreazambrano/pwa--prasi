@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from  '@angular/common/http';
-import { UserWService } from "../../services/user-w.service";
-import { DataApiService } from '../../services/data-api.service';
-
 import { ActivatedRoute, Params} from '@angular/router';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { DataApiService } from '../../services/data-api.service';
+import { HttpClient } from  '@angular/common/http';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { UserWService } from "../../services/user-w.service";
 
 @Component({
   selector: 'app-prasicartoverlay',
@@ -31,5 +30,4 @@ remove(i){
   ngOnInit() {
 
   }
-
 }
