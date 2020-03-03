@@ -23,9 +23,9 @@
 					<div class="cart-product-container  ps-scroll">
 						<!--=======  single cart product  =======-->
 						
-						<div class="single-cart-product" *ngFor="let tix of _uw.car" >
+						<div class="single-cart-product" *ngFor="let tix of _uw.car;let i = index" >
 							<span class="cart-close-icon">
-								<a href="index-trending.html#"><i class="ti-close"></i></a>
+								<a (click)="remove(i)"><i class="ti-close"></i></a>
 							</span>
 							<div class="image">
 								<a href="shop-product-basic.html">

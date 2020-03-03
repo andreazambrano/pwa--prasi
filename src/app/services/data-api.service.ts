@@ -67,7 +67,12 @@ export class DataApiService {
 		const url_api = 'https://db.andesproadventures.com:3018/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 
+	}getAllTixsNew(){
+		const url_api = 'https://db.andesproadventures.com:3018/api/tixes?filter[where][and][0][status]=activated&filter[where][and][1][colection]=new';
+		return this.http.get(url_api);
+
 	}
+
 	getAllTixsReturn(){
 		const url_api = 'https://db.andesproadventures.com:3018/api/tixes?filter[where][status]=activated';
 		return (this.tixs = this.http.get(url_api));

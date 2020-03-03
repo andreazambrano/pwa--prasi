@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from  '@angular/common/http';
 import { UserWService } from "../../services/user-w.service";
 import { DataApiService } from '../../services/data-api.service';
-
+import { ScrollTopService }  from '../../services/scroll-top.service';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -16,7 +16,8 @@ import { Location } from '@angular/common';
 export class PrasishopcartComponent implements OnInit {
 
   constructor(
- private router: Router, 
+    public scrollTopService:ScrollTopService,
+    private router: Router, 
     private dataApi: DataApiService,
     private route:ActivatedRoute,
     private location: Location,
@@ -66,6 +67,7 @@ setEnvio(){
 	}
 }
   ngOnInit() {
+        this.scrollTopService.setScrollTop();
   }
 
 }

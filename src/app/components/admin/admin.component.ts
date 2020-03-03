@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { UserInterface } from '../../models/user-interface'; 
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { isError } from "util";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isError } from "util";
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { ScrollTopService }  from '../../services/scroll-top.service';
 import { UserWService } from "../../services/user-w.service";
+import { UserInterface } from '../../models/user-interface'; 
 import { DataApiService } from "../../services/data-api.service";
 
 declare var NgForm:any;
@@ -20,6 +21,7 @@ export class AdminComponent implements OnInit {
   submitted = false;
 
   constructor(
+     public scrollTopService:ScrollTopService,
   	 public dataApi:DataApiService,
     public _uw:UserWService,
     private formBuilder: FormBuilder, 
@@ -36,11 +38,12 @@ export class AdminComponent implements OnInit {
   public isLogged =false;
 
   ngOnInit() {
-  	  this.ngFormLogin = this.formBuilder.group({
+    this.scrollTopService.setScrollTop();
+	  this.ngFormLogin = this.formBuilder.group({
       email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]]
-    });
-  }
+      });
+    }
 
   get fval() {
   return this.ngFormLogin.controls;

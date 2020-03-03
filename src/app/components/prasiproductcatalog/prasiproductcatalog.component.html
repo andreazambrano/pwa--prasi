@@ -46,7 +46,7 @@
 						</div>
 						
 						<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
-							<span class="wishlist"><a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" ><i class="ion-edit"></i></a></span>
+							<span class="wishlist"><a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" (click)="edit(tix)"><i class="ion-edit"></i></a></span>
 
 							
 
@@ -89,7 +89,7 @@
 						<div class="price" *ngIf="tix.category=='Moccs'">
 							<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
 							<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
-							<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
+							<span class="discounted-price" *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
 						</div>
 						<div class="price" *ngIf="tix.category!='Moccs'">
 							

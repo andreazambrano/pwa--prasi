@@ -1,27 +1,22 @@
-import { FilePickerComponent } from '../../../assets/file-picker/src/lib/file-picker.component';
-import { ValidationError } from '../../../assets/file-picker/src/lib/validation-error.model';
-import { FilePreviewModel } from '../../../assets/file-picker/src/lib/file-preview.model';
-
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
-
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { UserInterface } from '../../models/user-interface'; 
 import { CardInterface } from '../../models/card-interface'; 
-import { TixInterface } from '../../models/tix-interface';  
-import { UserWService } from '../../services/user-w.service';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 import { DataApiService } from '../../services/data-api.service';
-
-import { Router } from '@angular/router';
+import { delay, map } from 'rxjs/operators';
+import { DemoFilePickerAdapter } from  '../../file-picker.adapter';
+import { FilePickerComponent } from '../../../assets/file-picker/src/lib/file-picker.component';
+import { FilePreviewModel } from '../../../assets/file-picker/src/lib/file-preview.model';
+import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
+import { HttpClient } from  '@angular/common/http';
 import { isError } from "util";
 import { Location } from '@angular/common';
-import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
-
-import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
-
-import { HttpClient } from  '@angular/common/http';
-import { DemoFilePickerAdapter } from  '../../file-picker.adapter';
+import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { TixInterface } from '../../models/tix-interface';  
+import { UserInterface } from '../../models/user-interface'; 
+import { UserWService } from '../../services/user-w.service';
+import { ValidationError } from '../../../assets/file-picker/src/lib/validation-error.model';
 
 
 @Component({
@@ -107,9 +102,11 @@ public tix : TixInterface ={
       codigo:"",
       color:"",
       con:[],
+      colection:"",
       globalPrice:0,
       images:[],
       modelo:"",
+      new:true,
       sin:[],
       status:"",
       tallas:[],
@@ -117,17 +114,17 @@ public tix : TixInterface ={
     };
 
 
-  public isError = false;
-  public isLogged =false;
-  public precio = "sin";
-  public precio2 = "con";
-  public check = "check";
-  public urlCreated = "";
-  public images:any[]=[];
-   public checks:any[]=[];
+    public isError = false;
+    public isLogged =false;
+    public precio = "sin";
+    public precio2 = "con";
+    public check = "check";
+    public urlCreated = "";
+    public images:any[]=[];
+    public checks:any[]=[];
     public sin:any[]=[];
-     public con:any[]=[];
-     public tallas:any[]=[];
+    public con:any[]=[];
+    public tallas:any[]=[];
 
      iniciador(size){
         for (var i = 0; i < size; i++) {
@@ -141,9 +138,7 @@ public tix : TixInterface ={
      }
 
 
-  ngOnInit() {
-      
-
+  ngOnInit() {      
     this._uw.images=[];
     this.ngFormAddtixs = this.formBuilder.group({
       productName: ['', [Validators.required]],
@@ -151,6 +146,7 @@ public tix : TixInterface ={
       category: ['', [Validators.required]],
       color:['', [Validators.required]],
       codigo:['', [Validators.required]],
+      new:[true, [Validators.required]],
       modelo:['', [Validators.required]],
       globalPrice: [0,[Validators.required]]
       });
@@ -168,10 +164,7 @@ public tix : TixInterface ={
       return;
         } 
       this._uw.errorFormAddtixs=false;
-      // this.user = this.authService.getCurrentUser();
-      // let val=(this.user.id).toString();
       this.tix = this.ngFormAddtixs.value;
-      // this.tix.userd="a"+val;
       this.tix.status="activated";
       if (this._uw.moccs){
         this.tix.globalPrice=0;
@@ -180,14 +173,15 @@ public tix : TixInterface ={
       }
       if (this._uw.botas || this._uw.zapatos){
         this.tix.price=this.tix.globalPrice;
-        
+      }
+      if(this.tix.new){
+        this.tix.colection="new";
       }
       this.tix.check=this.checks;
       this.tix.tallas=this.tallas;
       this.tix.images=this._uw.images;
       return this.dataApiService.saveTixFree(this.tix)
         .subscribe(
-            // tix => this.router.navigate(['/mytixs'])
         );
   }    
     
@@ -226,7 +220,6 @@ public tix : TixInterface ={
         this._uw.moccs=false;
         this._uw.typeGlobal=true; 
         this.tallas=this.tallasZapatos;
-        console.log("ZAPATOS!");
         this.iniciador(this.tallasZapatos.length);      
       }
     }
@@ -245,8 +238,6 @@ public tix : TixInterface ={
     console.log(e);
   }
   onUploadSuccess(e: FilePreviewModel) {
-   // console.log(e);
-  // console.log(this.myFiles);
   this.images=this._uw.file;
   }
   onRemoveSuccess(e: FilePreviewModel) {
@@ -256,8 +247,6 @@ public tix : TixInterface ={
     
     file.fileName="http://192.168.1.2:80/imgApi2/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
-    // this.images.push(file.fileName);
-
   }
 
   removeFile() {

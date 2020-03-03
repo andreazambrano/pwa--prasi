@@ -141,6 +141,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PrasifilterComponent } from './components/prasifilter/prasifilter.component';
 import { PrasishopcartComponent } from './components/prasishopcart/prasishopcart.component';
+import { PrasieditComponent } from './components/prasiedit/prasiedit.component';
 
 
 
@@ -237,6 +238,7 @@ import { PrasishopcartComponent } from './components/prasishopcart/prasishopcart
     FilterComponent,
     PrasifilterComponent,
     PrasishopcartComponent,
+    PrasieditComponent,
 
   ],
   imports: [

@@ -8,6 +8,7 @@ export interface TixInterface{
 	check?:Array<boolean>;
 	codigo?:string;
 	color?:string;
+	colection?:string;
 	con?:Array<number>;
 	description?:string;
 	desLg?:string;
