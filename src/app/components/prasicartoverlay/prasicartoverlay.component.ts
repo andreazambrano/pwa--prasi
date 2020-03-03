@@ -15,7 +15,7 @@ import { Location } from '@angular/common';
 export class PrasicartoverlayComponent implements OnInit {
 
   constructor(
-  	 private router: Router, 
+  	private router: Router, 
     private dataApi: DataApiService,
     private route:ActivatedRoute,
     private location: Location,
@@ -24,13 +24,10 @@ export class PrasicartoverlayComponent implements OnInit {
 
 remove(i){
   console.log("indice a remover: "+i);
-  this._uw.car.splice(i, 1);
   this._uw.subTotal=this._uw.subTotal-(this._uw.car[i].cantidad*this._uw.car[i].finalPrice);
+  this._uw.car.splice(i, 1);
   this._uw.numProd=this._uw.numProd-1;
 }
-
-  
-
   ngOnInit() {
 
   }
