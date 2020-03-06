@@ -1,56 +1,25 @@
 <header class="header header-offcanvas-about header-sticky">
-		
-		<!--=======  header bottom  =======-->
-		
 		<div class="header-bottom pt-md-40 pb-md-40 pt-sm-40 pb-sm-40">
 			<div class="container wide">
-
-					<!--=======  header bottom container  =======-->
-					
 					<div class="header-bottom-container">
-						
-						<!--=======  logo with off canvas  =======-->
-						
 						<div class="logo-with-offcanvas d-flex">
-	
-							<!--=======  offcanvas about icon  =======-->
-							
 							<div class="offcanvas-about-icon mr-20 d-none d-lg-block">
 								<a href="javascript:void(0)" id="offcanvas-about-icon">
 									<i class="ion-navicon"></i>
 								</a>
 							</div>
-
-							<!-- <div class="overlay-menu-icon mr-20 d-none d-lg-block">
-								<a href="javascript:void(0)" id="overlay-menu-icon">
-									<i class="fa fa-trash"></i>
-								</a>
-							</div> -->
-													
-							<!--=======  End of offcanvas about icon  =======-->
-		
-							<!--=======  logo   =======-->
-							
 							<div class="logo">
 								<a routerLink="">
 									<img src="assets/assetsprasi/images/logo.png" class="img-fluid" alt="">
 								</a>
 							</div>
-							
-							<!--=======  End of logo   =======-->
 						</div>
-						
-						<!--=======  End of logo with off canvas  =======-->
-	
-						<!--=======  header bottom navigation  =======-->
-						
 							<div class="header-bottom-navigation">
 								<div class="site-main-nav d-none d-lg-block">
 									<nav class="site-nav center-menu">
 										<ul>
 											<li class="menu-item-has-children" ><a >Tienda</a>
 												<ul class="sub-menu single-column-menu">
-                                                 <!--    <li><a href="element-recent-products.html">Nueva Coleccion</a></li> -->
                                                     <li><a routerLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
                                                     <li><a routerLink="/prasifilter/Zapatos">Zapatos</a></li>
                                                     <li><a routerLink="/prasifilter/Moccs">Moccs</a></li>
@@ -68,27 +37,16 @@
 									</nav>
 								</div>
 						</div>
-						
-						<!--=======  End of header bottom navigation  =======-->
-
-						<!--=======  headeer right container  =======-->
-						
 						<div class="header-right-container">
-
-							<!--=======  header right icons  =======-->
-							
 							<div class="header-right-icons d-flex justify-content-end align-items-center h-100">
-								<!--=======  single-icon  =======-->
-
 								<div class="single-icon user-login"*ngIf="this._uw.isLogged">
 									<a routerLink="addtixs" data-tippy="Agregar producto" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true">
 										<i class="ion-plus" style="color: #d3122a;"></i>
 									</a>
 								</div>
 								<div class="single-icon wishlist" *ngIf="this._uw.editingTrek">
-									<a href="javascript:void(0)" id="offcanvas-wishlist-icon">
+									<a href="javascript:void(0)" id="offcanvas-wishlist-icon" >
 										<i class="fa fa-trash" style="color: #d3122a;"></i>
-										
 									</a>
 								</div>
 								
@@ -97,50 +55,20 @@
 										<i class="ion-ios-search-strong"></i>
 									</a>
 								</div>
-								
-								<!--=======  End of single-icon  =======-->
-								<!--=======  single-icon  =======-->
-								
 								<div class="single-icon user-login">
 									<a routerLink="admin">
 										<i class="ion-android-person"></i>
 									</a>
 								</div>
-								
-								<!--=======  End of single-icon  =======-->
-								<!--=======  single-icon  =======-->
-								
-								
-								
-								<!--=======  End of single-icon  =======-->
-								<!--=======  single-icon  =======-->
-								
 								<div class="single-icon cart" *ngIf="_uw.numProd>0">
 									<a href="javascript:void(0)" id="offcanvas-cart-icon">
 										<i class="ion-ios-cart"></i>
 										<span class="count">{{_uw.numProd}}</span>
 									</a>
 								</div>
-								<!--=======  End of single-icon  =======-->
 							</div>
-							<!--=======  End of header right icons  =======-->
-		
 						</div>
-						
-						<!--=======  End of headeer right container  =======-->
-						
-						
 					</div>
-						
-						<!--=======  End of headeer right container  =======-->
-						
-						
-					
-					
-					<!--=======  End of header bottom container  =======-->
-					
-					<!-- Mobile Navigation Start Here -->
-
 					<div class="site-mobile-navigation d-block d-lg-none">
 						<div id="dl-menu" class="dl-menuwrapper site-mobile-nav">
 							<!--Site Mobile Menu Toggle Start-->
@@ -171,12 +99,7 @@
 							</ul>
 						</div>
 					</div>
-					<!-- Mobile Navigation End Here -->
-					
-						
 			</div>
 		</div>
-	
-		<!--=======  End of header bottom  =======-->
 	</header>
 

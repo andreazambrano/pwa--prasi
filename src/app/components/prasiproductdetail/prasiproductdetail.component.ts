@@ -189,6 +189,16 @@ export class PrasiproductdetailComponent implements OnInit {
     }
     
   }
+  setDeleted(){
+    this.tix=this.tix=this._uw.foredit;
+    let id =this.tix.id;
+    this.tix.status="deleted";
+    return this.dataApi.updateTix(this.tix, id)
+        .subscribe(
+            tix => this.router.navigate(['/prasiproductcatalog'])
+        );
+
+  }
 
     sendTix(id: string){
       this.submitted = true;
