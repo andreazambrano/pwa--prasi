@@ -48,7 +48,8 @@ export class PrasifilterComponent implements OnInit {
           });
         }
         this._uw.loaded=true;   
-         this.getTixsFilter(this.route.snapshot.paramMap.get('category'));
+         // this.getTixsFilter(this.route.snapshot.paramMap.get('category'));
+          this.getAllTixsNew();
     }
     getTixsFilter(catego: string){
       let categ = catego; 
@@ -59,6 +60,15 @@ export class PrasifilterComponent implements OnInit {
           this.tixs=res;            
         }
       }); 
+    }
+    getAllTixsNew(){
+        this.dataApi.getAllTixsNew().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.tixs=res;            
+        }
+     });  
     }
     public loadScript() {
       let node = document.createElement("script");

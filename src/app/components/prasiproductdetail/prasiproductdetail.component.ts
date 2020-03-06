@@ -210,6 +210,12 @@ export class PrasiproductdetailComponent implements OnInit {
       if(this.tix.new){
         this.tix.colection="new";
       }
+      if (this.tix.category=="Botas y botines"){
+        this.tix.categoryFilter="Botas";
+      }
+      else{
+        this.tix.categoryFilter=this.tix.category;
+      }
       this.tix.check=this.checks;
       this.tix.tallas=this.tallas;
       this.tix.images=this._uw.images;

@@ -89,15 +89,17 @@
 												<div class="shop-product__block__value">
 													<div class="shop-product-size-list" *ngIf="tix">
 														<div *ngFor="let item of tix.tallas; let i=index;">
-															<div  [hidden]="!tix.check[i]" >
-																<div class="col-md-1 col-xs-6">
+															<div  [hidden]="!tix.check[i]" class="row">
+																<!-- <div class="col-md-1 col-xs-6">
 																	<ul class="amenities third"  [hidden]="i!=this.indiceTalla">
 																		<li></li>
 																	</ul>
-																</div>
-																<div class="col-md-10 col-xs-6" >
-																	<span class="single-size" (click)="setSize(tix,i)">{{item}}
-																	</span>	
+																	
+																</div> -->
+																<div class="col-md-12 col-xs-6" >
+																	
+																	<span class="single-size" style="font-size: 16px;" (click)="setSize(tix,i)">{{item}} 
+																	</span>	<i class="fa fa-check"  [hidden]="i!=this.indiceTalla"></i>
 																</div>
 															</div>
 														</div>

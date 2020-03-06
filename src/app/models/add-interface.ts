@@ -6,6 +6,7 @@ export interface AddInterface{
 	cantidad?:number;
 	capacidad?:number;
 	category?:string;
+	categoryFilter?:string;
 	check?:Array<boolean>;
 	codigo?:string;
 	color?:string;
