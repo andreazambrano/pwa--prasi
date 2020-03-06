@@ -54,6 +54,7 @@ export { PrasiinstagramfeedComponent } from "./prasiinstagramfeed/prasiinstagram
 export { PrasitopfooterComponent } from "./prasitopfooter/prasitopfooter.component";
 export { PrasifooterComponent } from "./prasifooter/prasifooter.component";
 export { PrasiaboutoverlayComponent } from "./prasiaboutoverlay/prasiaboutoverlay.component";
+export { PrasiconfirmationoverlayComponent } from "./prasiconfirmationoverlay/prasiconfirmationoverlay.component";
 export { PrasicartoverlayComponent } from "./prasicartoverlay/prasicartoverlay.component";
 export { PrasisearchoverlayComponent } from "./prasisearchoverlay/prasisearchoverlay.component";
 export { PrasiproductdetailComponent } from "./prasiproductdetail/prasiproductdetail.component";

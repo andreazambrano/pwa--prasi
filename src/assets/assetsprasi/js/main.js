@@ -78,6 +78,22 @@
 	});
 	
 
+
+	$('#offcanvas-confirmation-icon').on('click', function(){
+		$('#confirmation-overlay').addClass('active-confirmation-overlay');
+		$('.overlay-close').addClass('active').removeClass('inactive');
+		$('body').addClass('active-body-search-overlay');
+
+	});
+	
+	$('#confirmation-close-icon, .overlay-close').on('click', function(){
+		$('#confirmation-overlay').toggleClass('active-confirmation-overlay');
+		$('.overlay-close').addClass('inactive').removeClass('active');
+		$('body').removeClass('active-body-search-overlay');
+	});
+
+
+
 	
 	/* active and deactive wishlist overlay */
 	

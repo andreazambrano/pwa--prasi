@@ -1,7 +1,3 @@
-	<!--=============================================
-	=            Header wide topbar         =
-	=============================================-->
-	
 <header class="header header-offcanvas-about header-sticky">
 		
 		<!--=======  header bottom  =======-->
@@ -24,14 +20,20 @@
 									<i class="ion-navicon"></i>
 								</a>
 							</div>
-							
+
+							<!-- <div class="overlay-menu-icon mr-20 d-none d-lg-block">
+								<a href="javascript:void(0)" id="overlay-menu-icon">
+									<i class="fa fa-trash"></i>
+								</a>
+							</div> -->
+													
 							<!--=======  End of offcanvas about icon  =======-->
 		
 							<!--=======  logo   =======-->
 							
 							<div class="logo">
-								<a >
-									<img src="assets/assetsprasi/images/logo.png" class="img-fluid" routerLink="">
+								<a routerLink="">
+									<img src="assets/assetsprasi/images/logo.png" class="img-fluid" alt="">
 								</a>
 							</div>
 							
@@ -42,7 +44,7 @@
 	
 						<!--=======  header bottom navigation  =======-->
 						
-						<div class="header-bottom-navigation">
+							<div class="header-bottom-navigation">
 								<div class="site-main-nav d-none d-lg-block">
 									<nav class="site-nav center-menu">
 										<ul>
@@ -83,7 +85,12 @@
 										<i class="ion-plus" style="color: #d3122a;"></i>
 									</a>
 								</div>
-
+								<div class="single-icon wishlist" *ngIf="this._uw.editingTrek">
+									<a href="javascript:void(0)" id="offcanvas-wishlist-icon">
+										<i class="fa fa-trash" style="color: #d3122a;"></i>
+										
+									</a>
+								</div>
 								
 								<div class="single-icon search">
 									<a href="javascript:void(0)" id="search-icon">
@@ -103,12 +110,7 @@
 								<!--=======  End of single-icon  =======-->
 								<!--=======  single-icon  =======-->
 								
-								<!-- <div class="single-icon wishlist">
-									<a href="javascript:void(0)" id="offcanvas-wishlist-icon">
-										<i class="ion-android-favorite-outline"></i>
-										<span class="count">2</span>
-									</a>
-								</div> -->
+								
 								
 								<!--=======  End of single-icon  =======-->
 								<!--=======  single-icon  =======-->
@@ -129,6 +131,11 @@
 						
 						
 					</div>
+						
+						<!--=======  End of headeer right container  =======-->
+						
+						
+					
 					
 					<!--=======  End of header bottom container  =======-->
 					
@@ -144,23 +151,23 @@
 							</button><!--Site Mobile Menu Toggle End-->
 							<ul class="dl-menu dl-menu-toggle">
 								
-								<li><a >Tienda</a>
+								<li><a href="#">Tienda</a>
 									<ul class="dl-submenu">
-										<!-- <li><a href="element-recent-products.html">Nueva Coleccion</a></li> -->
-                                        <li><a routerLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
-                                        <li><a routerLink="/prasifilter/Zapatos">Zapatos</a></li>
-                                        <li><a routerLink="/prasifilter/Moccs">Moccs</a></li>
+										<li><a href="element-recent-products.html">Nueva Coleccion</a></li>
+                                        <li><a href="shop-left-sidebar.html">Botas y Botines</a></li>
+                                        <li><a href="shop-left-sidebar.html">Zapatos</a></li>
+                                        <li><a href="shop-left-sidebar.html">Mocs</a></li>
 									</ul>
 								</li>
 								
-								<li><a >Prasi</a>
+								<li><a href="#">Prasi</a>
 									<ul class="dl-submenu">
-										<li><a routerLink="prasiabout">Quienes somos</a></li>
-                                        <li><a >Tabla de tallas</a></li>
-                                        <li><a routerLink="prasidevoluciones">Devoluciones</a></li>
+										<li><a href="about-us-2.html">Quienes somos</a></li>
+                                        <li><a href="faq.html">Tabla de tallas</a></li>
+                                        <li><a href="shop-order-tracking.html">Devoluciones</a></li>
 									</ul>
 								</li>
-								<li><a routerLink="prasicontact">Contactanos</a></li>
+								<li><a href="contact-us.html">Contactanos</a></li>
 							</ul>
 						</div>
 					</div>
@@ -172,5 +179,4 @@
 	
 		<!--=======  End of header bottom  =======-->
 	</header>
-	
-	<!--===== End of Header wide topbar ======-->
+

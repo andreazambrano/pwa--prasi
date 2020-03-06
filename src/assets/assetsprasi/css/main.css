@@ -632,6 +632,114 @@ a.scroll-top {
         .about-overlay .overlay-content .contact-widget .social-icons ul li a i {
           font-size: 18px; }
 
+/*confirmation overlay*/
+
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .confirmation-overlay.active-confirmation-overlay {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 9999; }
+    .confirmation-overlay.active-confirmation-overlay .overlay-content {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-transition: 0.6s;
+      -o-transition: 0.6s;
+      transition: 0.6s;
+      visibility: visible;
+      opacity: 1; }
+    .confirmation-overlay.active-confirmation-overlay:after {
+      visibility: visible;
+      opacity: 0.5;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+  .confirmation-overlay:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    content: "";
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .confirmation-overlay .overlay-content {
+    background-color: #ffffff;
+    width: 360px;
+    height: 100vh;
+    z-index: 3;
+    padding: 30px 40px;
+    position: relative;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    visibility: hidden;
+    opacity: 0;
+    overflow: auto; }
+    .confirmation-overlay .overlay-content .overlay-content-container {
+      padding: 20px 0; }
+    .confirmation-overlay .overlay-content .close-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px; }
+      .confirmation-overlay .overlay-content .close-icon a {
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s; }
+        .confirmation-overlay .overlay-content .close-icon a:hover {
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg); }
+        .confirmation-overlay .overlay-content .close-icon a i {
+          font-size: 25px;
+          color: #333333; }
+    .confirmation-overlay .overlay-content .widget-wrapper .single-widget h2.widget-title {
+      font-size: 24px;
+      line-height: 26px;
+      margin-bottom: 30px; }
+    .confirmation-overlay .overlay-content .contact-widget .email {
+      margin-bottom: 35px; }
+      .confirmation-overlay .overlay-content .contact-widget .email a:hover {
+        color: #333333; }
+    .confirmation-overlay .overlay-content .contact-widget .phone {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 35px; }
+    .confirmation-overlay .overlay-content .contact-widget .social-icons ul li {
+      display: inline-block; }
+      .confirmation-overlay .overlay-content .contact-widget .social-icons ul li:last-child a {
+        margin-right: 0; }
+      .confirmation-overlay .overlay-content .contact-widget .social-icons ul li a {
+        display: inline-block;
+        margin-right: 20px;
+        color: inherit; }
+        .confirmation-overlay .overlay-content .contact-widget .social-icons ul li a i {
+          font-size: 18px; }
+
 /*----------  wishlist overlay  ----------*/
 /*----------  offcanvas wishlist  ----------*/
 .wishlist-overlay {
@@ -1545,12 +1653,40 @@ nav.site-nav > ul > li {
       display: none; } }
   .header-offcanvas-about.is-sticky::before {
     display: none; }
-
 /* icon  about off canvas*/
 .offcanvas-about-icon a {
   color: #333;
   display: inline-block; }
   .offcanvas-about-icon a i {
+    font-size: 30px; }
+
+
+/*----------  header offcanvas confirmation     ----------*/
+.header-offcanvas-confirmation {
+  border-bottom: 1px solid #efefef;
+  position: relative; }
+  .header-offcanvas-confirmation:before {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    content: ""; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header-offcanvas-confirmation::before {
+      display: none; } }
+  @media only screen and (max-width: 767px) {
+    .header-offcanvas-confirmation::before {
+      display: none; } }
+  .header-offcanvas-confirmation.is-sticky::before {
+    display: none; }
+
+    .offcanvas-confirmation-icon a {
+  color: #333;
+  display: inline-block; }
+  .offcanvas-confirmation-icon a i {
     font-size: 30px; }
 
 /*----------  header wide topbar  ----------*/

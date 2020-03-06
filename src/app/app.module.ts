@@ -13,7 +13,7 @@ import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
 // import { RadioButtonModule } from '@swimlane/ngx-ui/lib/components/radiobutton/radiobutton.module';
 
 // import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+// import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 //RUTAS
 import { app_routing } from "./app.routes";       
 
@@ -142,6 +142,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { PrasifilterComponent } from './components/prasifilter/prasifilter.component';
 import { PrasishopcartComponent } from './components/prasishopcart/prasishopcart.component';
 import { PrasieditComponent } from './components/prasiedit/prasiedit.component';
+import { PrasiconfirmationoverlayComponent } from './components/prasiconfirmationoverlay/prasiconfirmationoverlay.component';
 
 
 
@@ -239,6 +240,7 @@ import { PrasieditComponent } from './components/prasiedit/prasiedit.component';
     PrasifilterComponent,
     PrasishopcartComponent,
     PrasieditComponent,
+    PrasiconfirmationoverlayComponent,
 
   ],
   imports: [
@@ -261,6 +263,7 @@ import { PrasieditComponent } from './components/prasiedit/prasiedit.component';
     XunkCalendarModule,
     FilePickerModule,
     MatRadioModule,
+    // SweetAlert2Module,
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,

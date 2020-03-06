@@ -1,8 +1,4 @@
 
-	<!--=============================================
-	=            section title  container      =
-	=============================================-->
-	
 	<div class="section-title-container mb-80 mb-md-60 mb-sm-40">
 		<div class="container">
 			<div class="row">
@@ -19,12 +15,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<!--=====  End of section title container ======-->
-	<!--=============================================
-	=            product carousel container         =
-	=============================================-->
-	
 	<div class="product-carousel-container mb-70 mb-md-50 mb-sm-30">
 		<div class="container wide">
 			<div class="row column-five">
@@ -51,8 +41,18 @@
 							
 
 							<span class="quickview" >
-								<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  ><i class="fa fa-trash"></i>
-								</a></span>
+							
+
+								
+								<!-- <a href="javascript:void(0)" id="overlay-menu-icon">
+									<i class="fa fa-trash"></i>
+								</a>
+							 -->
+							
+
+
+								
+							</span>
 						</div>
 
 						
@@ -63,29 +63,12 @@
 					<!--=======  single product content  =======-->
 			
 					<div class="single-product__content">
-							<!-- <div class="single-product__variations">
-								<div class="size-container mb-5">
-									<span class="size">L</span>
-									<span class="size">M</span>
-									<span class="size">S</span>
-									<span class="size">XS</span>
-								</div>
-								<div class="color-container">
-									<span class="black"></span>
-									<span class="blue"></span>
-									<span class="yellow"></span>
-								</div>
-								<a href="#" class="clear-link">clear</a>
-							</div> -->
 						<div class="title">
 							<h3> <a >{{tix.productName}}</a></h3>
 							<a >Agregar al carrito</a>
+
 						</div>
 
-						
-
-
-						
 						<div class="price" *ngIf="tix.category=='Moccs'">
 							<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
 							<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
