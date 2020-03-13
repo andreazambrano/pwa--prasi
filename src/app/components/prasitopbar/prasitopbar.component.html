@@ -3,7 +3,7 @@
 			<div class="container wide">
 					<div class="header-bottom-container">
 						<div class="logo-with-offcanvas d-flex">
-							<div class="offcanvas-about-icon mr-20 d-none d-lg-block">
+							<div class="offcanvas-about-icon mr-20 d-none d-lg-block" *ngIf="!this._uw.admin">
 								<a href="javascript:void(0)" id="offcanvas-about-icon">
 									<i class="ion-navicon"></i>
 								</a>
@@ -18,21 +18,26 @@
 								<div class="site-main-nav d-none d-lg-block">
 									<nav class="site-nav center-menu">
 										<ul>
-											<li class="menu-item-has-children" ><a >Tienda</a>
+											<li class="menu-item-has-children"  *ngIf="!this._uw.admin">
+												<a >Tienda</a>
 												<ul class="sub-menu single-column-menu">
                                                     <li><a routerLink="/prasifilter/Botas y botines">Botas y Botines</a></li>
                                                     <li><a routerLink="/prasifilter/Zapatos">Zapatos</a></li>
                                                     <li><a routerLink="/prasifilter/Moccs">Moccs</a></li>
                                                 </ul>
                                             </li>
-											<li class="menu-item-has-children"><a href="javascript:void(0)">Prasi</a>
+                                            <li  *ngIf="this._uw.admin">
+												<a routerLink="/prasifilter/Botas y botines">Tienda</a>
+												
+                                            </li>
+											<li class="menu-item-has-children" *ngIf="!this._uw.admin"><a href="javascript:void(0)">Prasi</a>
                                                 <ul class="sub-menu single-column-menu">
                                                     <li><a routerLink="prasiabout">Quienes somos</a></li>
                                                     <li><a >Tabla de tallas</a></li>
                                                     <li><a routerLink="prasidevoluciones">Devoluciones</a></li>
                                                 </ul>
                                             </li>
-											<li><a routerLink="prasicontact">Contactanos</a></li>
+											<li ><a routerLink="prasicontact"  *ngIf="!this._uw.admin">Contactanos</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -42,6 +47,11 @@
 								<div class="single-icon user-login"*ngIf="this._uw.isLogged">
 									<a routerLink="addtixs" data-tippy="Agregar producto" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true">
 										<i class="ion-plus" style="color: #d3122a;"></i>
+									</a>
+								</div>
+								<div class="single-icon user-login"*ngIf="this._uw.isLogged && this._uw.editingTrek">
+									<a routerLink="prasidiscount" data-tippy="Aplicar descuento" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true">
+										<i class="fa fa-tag" style="color: #d3122a;"></i>
 									</a>
 								</div>
 								<div class="single-icon wishlist" *ngIf="this._uw.editingTrek">
@@ -55,12 +65,17 @@
 										<i class="ion-ios-search-strong"></i>
 									</a>
 								</div>
-								<div class="single-icon user-login">
+								<div class="single-icon user-login" *ngIf="!this._uw.isLogged">
 									<a routerLink="admin">
 										<i class="ion-android-person"></i>
 									</a>
 								</div>
-								<div class="single-icon cart" *ngIf="_uw.numProd>0">
+								<div class="single-icon user-login" *ngIf="this._uw.isLogged">
+									<a routerLink="admin">
+										<i class="fa fa-power-off"></i>
+									</a>
+								</div>
+								<div class="single-icon cart" *ngIf="_uw.numProd>0 && !this._uw.admin">
 									<a href="javascript:void(0)" id="offcanvas-cart-icon">
 										<i class="ion-ios-cart"></i>
 										<span class="count">{{_uw.numProd}}</span>

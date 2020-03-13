@@ -143,6 +143,7 @@ import { PrasifilterComponent } from './components/prasifilter/prasifilter.compo
 import { PrasishopcartComponent } from './components/prasishopcart/prasishopcart.component';
 import { PrasieditComponent } from './components/prasiedit/prasiedit.component';
 import { PrasiconfirmationoverlayComponent } from './components/prasiconfirmationoverlay/prasiconfirmationoverlay.component';
+import { PrasidiscountComponent } from './components/prasidiscount/prasidiscount.component';
 
 
 
@@ -241,6 +242,7 @@ import { PrasiconfirmationoverlayComponent } from './components/prasiconfirmatio
     PrasishopcartComponent,
     PrasieditComponent,
     PrasiconfirmationoverlayComponent,
+    PrasidiscountComponent,
 
   ],
   imports: [

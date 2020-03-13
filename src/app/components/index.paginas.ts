@@ -64,3 +64,4 @@ export { PrasidevolucionesComponent } from "./prasidevoluciones/prasidevolucione
 export { AdminComponent } from "./admin/admin.component";
 export { PrasifilterComponent } from "./prasifilter/prasifilter.component";
 export { PrasishopcartComponent } from "./prasishopcart/prasishopcart.component";
+export { PrasidiscountComponent } from "./prasidiscount/prasidiscount.component";

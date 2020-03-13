@@ -15,7 +15,7 @@ export class ActivityTrackerService {
   constructor() {
 
  	this.db = new PouchDB('crm_activitytracker');
-    this.remote = 'https://db.andesproadventures.com:5984//crm_activitytracker';
+    this.remote = 'http://192.168.1.3:5984//crm_activitytracker';
     let options = {
       live: true,
       retry: true,

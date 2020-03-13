@@ -65,7 +65,8 @@ import {
 	PrasidevolucionesComponent,
 	AdminComponent,
 	PrasifilterComponent,
-	PrasishopcartComponent
+	PrasishopcartComponent,
+	PrasidiscountComponent
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -136,6 +137,7 @@ const app_routes: Routes = [
 	{path:'admin',component:AdminComponent},
 	{path:'prasifilter/:category',component:PrasifilterComponent},
 	{path:'prasishopcart',component:PrasishopcartComponent},
+	{path:'prasidiscount',component:PrasidiscountComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	
 	];

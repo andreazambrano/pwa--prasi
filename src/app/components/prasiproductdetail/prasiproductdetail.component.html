@@ -9,7 +9,7 @@
 								<div class="shop-product__big-image-gallery-wrapper mb-30">
 									<div class="shop-product-rightside-icons">
 										<span class="enlarge-icon">
-											<a class="btn-zoom-popup" data-tippy="Click to enlarge" data-tippy-placement="left" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" >
+											<a class="btn-zoom-popup" data-tippy="Click para ampliar" data-tippy-placement="left" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" >
 												<i class="ion-android-expand"></i>
 											</a>
 										</span>
@@ -116,8 +116,8 @@
 												</div>
 											</div>				
 											
-											<div class="shop-product__block shop-product__block--quantity mb-40">
-												<div class="shop-product__block__title">Cantidad: </div>
+											<div class="shop-product__block shop-product__block--quantity mb-40" [hidden]="this._uw.isLogged">
+												<div class="shop-product__block__title" >Cantidad: </div>
 												<div class="shop-product__block__value">
 													<div class=" d-inline-block mx-0 pt-0">
 														<input type="number" class="form-control" id="cantidad" formControlName="cantidad" value="1">
@@ -126,7 +126,7 @@
 											</div>
 
 											<div class="shop-product__buttons mb-40">
-												<a class="Prasi-button Prasi-button--medium" (click)="add(tix)">Agregar al carrito</a>
+												<a class="Prasi-button Prasi-button--medium" (click)="add(tix)" [hidden]="this._uw.isLogged">Agregar al carrito </a>
 												<div class="quick-view-other-info pb-0" style="border-top:0px;">
 													<table>
 														<tr class="single-info">
