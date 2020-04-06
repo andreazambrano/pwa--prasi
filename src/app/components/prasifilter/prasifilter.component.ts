@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { ValidationError } from '../../../assets/file-picker/src/lib/validation-error.model';
-import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 
 @Component({
   selector: 'app-prasifilter',
@@ -26,9 +25,9 @@ export class PrasifilterComponent implements OnInit {
     public _uw:UserWService,
     private formBuilder: FormBuilder
   	) { }
-    loadAPI = null;
     public seted = false;
     public tixs:TixInterface;
+    loadAPI = null;
     url2 = "assets/assetsprasi/js/main.js";
     url = "assets/assetsprasi/js/plugins.js";
 
@@ -47,9 +46,8 @@ export class PrasifilterComponent implements OnInit {
             this.loadScript2();
           });
         }
-        this._uw.loaded=true;   
-         // this.getTixsFilter(this.route.snapshot.paramMap.get('category'));
-          this.getAllTixsNew();
+        this._uw.loaded=true;
+        this.getAllTixs();
     }
     getTixsFilter(catego: string){
       let categ = catego; 
@@ -61,12 +59,59 @@ export class PrasifilterComponent implements OnInit {
         }
       }); 
     }
-    getAllTixsNew(){
-        this.dataApi.getAllTixsNew().subscribe((res:any) => {
+
+    filterDiscount(){
+      this._uw.totalDiscount=0;
+      this._uw.tixsDiscount=[];
+      let ind = this._uw.tixsOrigin.length;
+      let res =  this._uw.tixsOrigin;
+        for (var i = 0; i < ind; i++) {
+          if (res[i].discount){
+            this._uw.tixsDiscount.push(res[i]);
+            this._uw.totalDiscount=this._uw.totalDiscount+1;
+            this.tixs=this._uw.tixsDiscount;
+          }
+        }     
+    }
+     filterNew(){
+      let ind = this._uw.tixsOrigin.length;
+      let res =  this._uw.tixsOrigin;
+      this._uw.totalNew=0;
+      this._uw.tixsNew=[];
+        for (var i = 0; i < ind; i++) {
+          if (res[i].new){
+            this._uw.tixsNew.push(res[i]);
+            this._uw.totalNew=this._uw.totalNew+1;
+            this.tixs=this._uw.tixsNew;
+          }
+        }     
+    }
+    filterDiscountIni(ind,res){
+      this._uw.totalDiscount=0;
+        for (var i = 0; i < ind; i++) {
+          if (res[i].discount){
+            this._uw.totalDiscount=this._uw.totalDiscount+1;
+          }
+        }     
+    }
+    filterNewIni(ind,res){
+      this._uw.totalNew=0;
+        for (var i = 0; i < ind; i++) {
+          if (res[i].new){
+            this._uw.totalNew=this._uw.totalNew+1;
+          }
+        }     
+    }
+    getAllTixs(){
+        this.dataApi.getAllTixs().subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("no");
        }else{
-        this.tixs=res;            
+        this.tixs=res;
+        this._uw.tixsOrigin=res;  
+         let ind =res.length;
+         this.filterDiscountIni(ind,res);       
+         this.filterNewIni(ind,res);     
         }
      });  
     }

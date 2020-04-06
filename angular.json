@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "thetixs": {
+    "prasicl": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/thetixs",
+            "outputPath": "dist/prasicl",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -91,18 +91,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "thetixs:build"
+            "browserTarget": "prasicl:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "thetixs:build:production"
+              "browserTarget": "prasicl:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "thetixs:build"
+            "browserTarget": "prasicl:build"
           }
         },
         "test": {
@@ -140,15 +140,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "thetixs:serve"
+            "devServerTarget": "prasicl:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "thetixs:serve:production"
+              "devServerTarget": "prasicl:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "thetixs"
+  "defaultProject": "prasicl"
 }

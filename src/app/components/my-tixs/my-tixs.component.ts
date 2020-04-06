@@ -17,7 +17,6 @@ import { TixInterface } from '../../models/tix-interface';
   styleUrls: ['./my-tixs.component.css']
 })
 export class MyTixsComponent implements OnInit {
-
   constructor(
     private router: Router, 
     private location: Location, 
@@ -25,22 +24,20 @@ export class MyTixsComponent implements OnInit {
     public dataApi: DataApiService, 
     public _uw:UserWService
     ) { }
-
-  
-  
+  loadAPI = null;
+  url = "assets/assetsprasi/js/plugins.js";
+  url2 = "assets/assetsprasi/js/main.js";
+  public seted = false;
   public user : UserInterface ={
     name:"",
     email:"",
     password:""
   };
+  cardArray: any[]=[];
   public cards:CardInterface;
   public cardsResult:any[]=[];
   public isLogged =false;
-
-  cardArray: any[]=[];
-
- public tixs:TixInterface;
-
+  public tixs:TixInterface;
   public books:BookInterface;
  getBookPending(){
          this.dataApi
@@ -54,18 +51,20 @@ export class MyTixsComponent implements OnInit {
         }
       });
     }
-
-
   ngOnInit() {
      this.getBookPending();
      this.getAllTixs();
-   
-    
+    if (this._uw.loaded==true){
+          this.loadAPI = new Promise(resolve => {
+            this.loadScript();
+            this.loadScript2();
+          });
+        }
+    this._uw.loaded=true;
     this._uw.usersPending=false;
 	  this.user = this.authService.getCurrentUser();
- 	 	// console.log(this.user);
     this._uw.name=this.user.name;
- 	 	this.onCheckUser();     //--header update
+ 	 	this.onCheckUser();    
     let val=(this.user.id).toString();
     this.dataApi.getCards(val).subscribe((res:any) => {
       if (res[0] === undefined){
@@ -75,29 +74,20 @@ export class MyTixsComponent implements OnInit {
         console.log("si");
         this._uw.card= (res[0]);
         this._uw.bandera=(res[0].bander);
-        //console.log(res[0].type);
         if (res[0].type=="affiliateType"){
           this._uw.affiliate=true;
- //         console.log("el uuario es un affiliate");
           this.router.navigate(['/booking']);
         }
         if (res[0].type=="partnerType"){
           this._uw.partner=true;
-
-   //       console.log("el uuario es un partner");
         }
         if (res[0].type=="adminType"){
           this._uw.admin=true;
           this.getUsersPending();
-     //     console.log("el uuario es un adminitrador");
         }        
-        
-
         this._uw.type=res[0].type;
-        //  console.log("bandera dentro", this._uw.bandera);              
         }
       });
-    //console.log("bandera fuera: ", this._uw.bandera);
   }
 
   getUsersPending(){
@@ -108,8 +98,6 @@ export class MyTixsComponent implements OnInit {
        }else{
         this._uw.usersPending=true;
         this.cards=res;
-     //   console.log("si");
-        //  console.log("bandera dentro", this._uw.bandera);              
         }
      });
    }
@@ -136,10 +124,6 @@ export class MyTixsComponent implements OnInit {
           this.tixs=res[0];
           let cantTixs=0;
           this._uw.totalTixs = res.length;
-          // console.log(cantTixs);
-        // this._uw.card= (res[0]);
-        // this._uw.bandera=(res[0].bander);
-         
         }
       });
     }
@@ -153,4 +137,21 @@ export class MyTixsComponent implements OnInit {
       this._uw.isLogged=true;
     }
   }
+  public loadScript() {
+      let node = document.createElement("script");
+      node.src = this.url;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+
+    public loadScript2() {
+      let node = document.createElement("script");
+      node.src = this.url2;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
 }

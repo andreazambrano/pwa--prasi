@@ -36,8 +36,14 @@ export class UserWService {
 	selectorB:boolean;
 	subTotal:number=0;
 	tixs:any[]=[];
+	tixsOrigin:any[]=[];
+	tixsDiscount:any={};
+	tixsNew:any={};
 	total:number=0;
 	totalBooks:number;
+	totalDiscount:number=0;
+	totalNew:number=0;
+	totalProducts:number=0;
 	totalTixs:number;
 	type:string;
 	typeGlobal:boolean=false;

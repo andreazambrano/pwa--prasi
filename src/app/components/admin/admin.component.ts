@@ -1,6 +1,5 @@
 import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { isError } from "util";
 import { Location } from '@angular/common';
@@ -21,8 +20,8 @@ export class AdminComponent implements OnInit {
   submitted = false;
 
   constructor(
-     public scrollTopService:ScrollTopService,
-  	 public dataApi:DataApiService,
+    public scrollTopService:ScrollTopService,
+    public dataApi:DataApiService,
     public _uw:UserWService,
     private formBuilder: FormBuilder, 
     private authService: AuthService, 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserWService } from "../../services/user-w.service";
+
 
 @Component({
   selector: 'app-prasiinstagramfeed',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrasiinstagramfeedComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+   public _uw:UserWService
+  	) { }
 
   ngOnInit() {
   }

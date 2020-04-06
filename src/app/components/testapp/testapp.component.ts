@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+import { UserWService } from "../../services/user-w.service";
+
 @Component({
   selector: 'app-testapp',
   templateUrl: './testapp.component.html',
@@ -7,18 +8,23 @@ declare var $: any;
 })
 export class TestappComponent implements OnInit {
 
-  constructor() { }
-   loadAPI = null;
-  url = "assets/assetsprasi/js/main.js";
+  constructor(
+     public _uw:UserWService
+     ) { }
+   loadAPI = null;  
+   url = "assets/assetsprasi/js/main.js";
+  url2 = "assets/assetsprasi/js/plugins.js";
 
   ngOnInit() {
-  	this.loadAPI = new Promise(resolve => {
-          // console.log("resolving promise...");
-          this.loadScript();
-        });
+ if (this._uw.loaded==true){
+          this.loadAPI = new Promise(resolve => {
+            this.loadScript2();
+            this.loadScript();
+          });
+        }
+        this._uw.loaded=true;
   }
-   public loadScript() {
-      // console.log("preparing to load...");
+      public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;
       node.type = "text/javascript";
@@ -27,4 +33,12 @@ export class TestappComponent implements OnInit {
       document.getElementsByTagName("head")[0].appendChild(node);
     }
 
+    public loadScript2() {
+      let node = document.createElement("script");
+      node.src = this.url2;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
 }

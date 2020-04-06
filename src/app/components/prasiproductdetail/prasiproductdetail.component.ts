@@ -1,7 +1,6 @@
 import { AddInterface } from '../../models/add-interface'; 
 import { ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 import { DataApiService } from '../../services/data-api.service';
 import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { HttpClient } from  '@angular/common/http';

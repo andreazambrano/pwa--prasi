@@ -23,6 +23,9 @@ export class PrasishopcartComponent implements OnInit {
     private location: Location,
     public _uw:UserWService
   	) { }
+      loadAPI = null;
+    url2 = "assets/assetsprasi/js/main.js";
+    url = "assets/assetsprasi/js/plugins.js";
 
    public envio = 0;
    public destino ='Seleccione un destino';
@@ -73,7 +76,32 @@ remove(i){
   this._uw.numProd=this._uw.numProd-1;
 }
   ngOnInit() {
+
         this.scrollTopService.setScrollTop();
+          if (this._uw.loaded==true){
+          this.loadAPI = new Promise(resolve => {
+            this.loadScript();
+            this.loadScript2();
+          });
+        }
+        this._uw.loaded=true;
   }
+      public loadScript() {
+      let node = document.createElement("script");
+      node.src = this.url;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
+
+    public loadScript2() {
+      let node = document.createElement("script");
+      node.src = this.url2;
+      node.type = "text/javascript";
+      node.async = true;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
 
 }

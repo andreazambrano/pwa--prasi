@@ -1,7 +1,6 @@
 import { AuthService } from '../../services/auth.service';
 import { CardInterface } from '../../models/card-interface'; 
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 import { DataApiService } from '../../services/data-api.service';
 import { delay, map } from 'rxjs/operators';
 import { DemoFilePickerAdapter } from  '../../file-picker.adapter';
@@ -251,7 +250,7 @@ public tix : TixInterface ={
   }
   onFileAdded(file: FilePreviewModel) {
     
-    file.fileName="http://192.168.1.3:80/imgApi2/server/local-storage/tixsImages/"+file.fileName;
+    file.fileName="https://db.andesproadventures.com:80/imgPrasi/server/local-storage/tixsImages/"+file.fileName;
     this.myFiles.push(file);
   }
 

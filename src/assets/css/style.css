@@ -3,7 +3,7 @@
     position: relative
 }
 
-a.btn.call-btn,p {
+a.btn.call-btn, {
     text-transform: capitalize
 }
 

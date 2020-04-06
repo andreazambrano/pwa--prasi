@@ -1,18 +1,16 @@
  <div class="shop-page-wrapper">
-    <div class="shop-page-header">
+      <div class="shop-page-header">
         <div class="container">
             <div class="row align-items-center">
-                 <div class="col-12 col-lg-8 col-md-10 d-none d-md-block">
-                        <!--=======  fitler titles  =======-->
-					<div class="filter-title filter-title--type-two">
-                      <ul class="product-filter-menu">
-							<li class="active" data-filter = "*">Todos <span class="filter-separator">/</span></li>
-							<li data-filter = ".Botas">Botas y botines <span class="filter-separator">/</span> </li>
-							<li data-filter = ".Moccs">Moccs <span class="filter-separator">/</span> </li>
-							<li data-filter = ".Zapatos">Zapatos</li>
-						</ul>
-                    </div>
-                    <!--=======  End of fitler titles  =======-->
+                <div class="col-12 col-lg-8 col-md-10 d-none d-md-block">
+				<div class="filter-title filter-title--type-two">
+                    <ul class="product-filter-menu">
+						<li class="active" data-filter = "*">Todos <span class="filter-separator">/</span></li>
+						<li data-filter = ".Botas">Botas y botines <span class="filter-separator">/</span> </li>
+						<li data-filter = ".Moccs">Moccs <span class="filter-separator">/</span> </li>
+						<li data-filter = ".Zapatos">Zapatos</li>
+                    </ul>
+                </div>
                 </div>
                 <div class="col-12 col-lg-4 col-md-2">
                     <div class="filter-icons">
@@ -21,14 +19,12 @@
                             <a data-target="four-column" class="active"  href="javascript:void(0)"><i class="ti-layout-grid3-alt"></i></a>
 							<a data-target="three-column" href="javascript:void(0)"><i class="ti-layout-grid2-alt"></i></a>
 							<a data-target="list" href="javascript:void(0)"><i class="ti-view-list"></i></a>
-                        </div>
+                        </div>         
                         <div class="single-icon advance-filter-icon">
                             <a href="javascript:void(0)" id="advance-filter-active-btn"><i class="ion-android-funnel"></i> Filtros</a>
                         </div>
                     </div>
                 </div>
-             
-                  
             </div>
         </div>
     </div>
@@ -36,45 +32,19 @@
 		<div class="shop-advance-filter-wrapper pt-50">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 mb-50">
-					</div>
-					<div class="col-md-4 col-sm-6 mb-50">
-						<div class="single-filter-widget">
-							<h2 class="single-filter-widget--title">Filtrar por:</h2>
-							<ul class="single-filter-widget--list single-filter-widget--list--category">
+					<div class="col-lg-offset-4 col-md-4 col-sm-6 mb-50">
+						<div class="single-filter-widget grid-filter">
+							
+							<h2 class="single-filter-widget--title">Filtrar por</h2>
+							<ul class="single-filter-widget--list">
 								<li class="has-children">
-									<a href="shop-left-sidebar.html">Productos de la nueva colección</a> <span class="quantity">15</span>
-									
-									
-								
-								</li>
-								<li class="has-children">
-									<a href="shop-left-sidebar.html">Productos con descuento</a> <span class="quantity">25</span>
-									
-								</li>
-								
+								<a data-target="four-column" href="javascript:void(0)" (click)="filterNew()">Productos de la nueva colección</a> <span class="quantity">{{_uw.totalNew}}</span>
+							</li>
+							<li class="has-children">
+								<a data-target="four-column" href="javascript:void(0)" (click)="filterDiscount()">Productos con descuento</a> <span class="quantity">{{_uw.totalDiscount}}</span>
+							</li>
 							</ul>
 						</div>
-					</div>
-
-					<div class="col-md-4 col-sm-6 mb-50">
-					</div>
-
-					
-
-					<!-- <div class="col-lg-2 col-md-4 col-sm-6 mb-50">
-						 <div class="single-filter-widget">
-							<h2 class="single-filter-widget--title">Talla</h2>
-							<ul class="single-filter-widget--list single-filter-widget--list--size">
-								<li><a href="shop-left-sidebar.html#">L</a> <span class="quantity">5</span></li>
-								<li><a href="shop-left-sidebar.html#">M</a> <span class="quantity">5</span></li>
-								<li><a href="shop-left-sidebar.html#">S</a> <span class="quantity">5</span></li>
-								<li><a href="shop-left-sidebar.html#">XS</a> <span class="quantity">5</span></li>
-							</ul>
-						</div>
-					</div> -->
-
-					<div class="col-lg-2 col-md-4 col-sm-6 mb-50">
 					</div>
 				</div>
 			</div>
@@ -82,124 +52,87 @@
     </div>
 	<div class="shop-page-content mt-100 mb-100">
 		<div class="container">
-			<div >
-				<!-- <div class="col-lg-12"> -->
-					<!--=======  fitler titles  =======-->
-					<!-- 
-					<div class="filter-title filter-title--type-one mb-70">
-						<ul class="product-filter-menu">
-							<li class="active" data-filter = "*">Todos <span class="filter-separator">/</span></li>
-							<li data-filter = ".Botas">Botas y botines <span class="filter-separator">/</span> </li>
-							<li data-filter = ".Moccs">Moccs <span class="filter-separator">/</span> </li>
-							<li data-filter = ".Zapatos">Zapatos</li>
-						</ul>
-					</div> -->
-					
-					<!--=======  End of fitler titles  =======-->
-				<!-- </div> -->
-
-				<!-- <div class="col-lg-3 order-2 order-lg-1">
-					<div class="page-sidebar">
-						<div class="single-sidebar-widget mb-40">
-						</div>
-						<div class="single-sidebar-widget mb-40">
-							<h2 class="single-sidebar-widget--title">Categorías</h2>
-							<ul class="single-sidebar-widget--list single-sidebar-widget--list--category">
-								<li><a href="shop-left-sidebar.html">Botas y botinas </a> <span class="quantity">12</span></li> 
-								<li><a href="shop-left-sidebar.html">Moccs </a> <span class="quantity">22</span></li> 
-								<li><a href="shop-left-sidebar.html">Zapatos </a> <span class="quantity">14</span></li> 
-							</ul>
-						</div>
-					</div>
-				</div> -->
-				<div class="col-lg-12 order-1 order-lg-2 mb-md-80 mb-sm-80 ">
-					<div class="row product-isotope shop-product-wrap four-column">
-						<div class="col-12 col-lg-3 col-md-6 col-sm-6 mb-45 {{tix.categoryFilter}}" *ngFor="let tix of tixs">
-							<div class="single-product"   >
-								<div class="single-product__image">
-									<a class="image-wrap" routerLink="/prasiproductdetail/{{tix.id}}">
-										<img src="{{tix.images[0]}}" class="img-fluid" alt="">
-										<img src="{{tix.images[1]}}"  class="img-fluid" alt="">
-									</a>
-									<div class="single-product__floating-badges">
-										<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
-										<span class="onsale" *ngIf="tix.new">Nuevo</span>
-									</div>
-									<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
-										<span class="wishlist">
-											<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" (click)="edit(tix)">
-												<i class="ion-edit">
-												</i>
-											</a>
-										</span>
-										<span class="quickview" >
-											<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  >
-												<i class="fa fa-trash">
-												</i>
-											</a>
-										</span>
-									</div>
+			<div class="col-lg-12 order-1 order-lg-2 mb-md-80 mb-sm-80 ">
+				<div class="row product-isotope shop-product-wrap four-column">
+					<div class="col-12 col-lg-3 col-md-6 col-sm-6 mb-45 {{tix.categoryFilter}}" *ngFor="let tix of tixs">
+						<div class="single-product"   >
+							<div class="single-product__image">
+								<a class="image-wrap" routerLink="/prasiproductdetail/{{tix.id}}">
+									<img src="{{tix.images[0]}}" class="img-fluid" alt="">
+									<img src="{{tix.images[1]}}"  class="img-fluid" alt="">
+								</a>
+								<div class="single-product__floating-badges">
+									<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
+									<span class="onsale" *ngIf="tix.new">Nuevo</span>
 								</div>
-								<div class="single-product__content">
-									<div class="title">
-										<h3> <a href="shop-product-basic.html">{{tix.productName}}</a></h3>
-										<a href="shop-left-sidebar.html#">Agregar al carro</a>
-									</div>
-									<div class="price" *ngIf="tix.category=='Moccs'">
-										<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
-										<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
-										<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
-									</div>
-									<div class="price" *ngIf="tix.category!='Moccs'">
-										
-										<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
-										<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
-										<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
-									</div>
+								<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
+									<span class="wishlist">
+										<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" (click)="edit(tix)">
+											<i class="ion-edit">
+											</i>
+										</a>
+									</span>
 								</div>
 							</div>
-							<div class="single-product--list">
-								<div class="single-product__image">
-									<a class="image-wrap" routerLink="/prasiproductdetail/{{tix.id}}">
-										<img src="{{tix.images[0]}}" class="img-fluid" alt="">
-										<img src="{{tix.images[1]}}"  class="img-fluid" alt="">
-									</a>
-		
-									<div class="single-product__floating-badges">
-										<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
-										<span class="onsale" *ngIf="tix.new">Nuevo</span>
-									</div>
-								
-									<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
-										<span class="wishlist">
-											<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" >
-												<i class="ion-edit"></i>
-											</a>
-										</span>
-										<span class="quickview" >
-											<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  >
-												<i class="fa fa-trash"></i>
-											</a></span>
-									</div>
+							<div class="single-product__content">
+								<div class="title">
+									<h3> <a >{{tix.productName}}</a></h3>
+									<a routerLink="/prasiproductdetail/{{tix.id}}">Agregar al carrito</a>
 								</div>
-								<div class="single-product__content">
-									<div class="title">
-										<h3> <a href="shop-product-basic.html">{{tix.productName}}</a></h3>
-									</div>
-									<div class="price" *ngIf="tix.category=='Moccs'">
-										<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
-										<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
-										<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
-									</div>
-									<div class="price" *ngIf="tix.category!='Moccs'">
-										<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
-										<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
-										<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
-									</div>
-									<p class="short-desc"> {{tix.description}}
-									</p>
-									<a  class="Prasi-button Prasi-button--medium"routerLink="/prasiproductdetail/{{tix.id}}">mas info</a>
+								<div class="price" *ngIf="tix.category=='Moccs'">
+									<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
+									<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
+									<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
 								</div>
+								<div class="price" *ngIf="tix.category!='Moccs'">
+									
+									<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
+									<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
+									<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
+								</div>
+							</div>
+						</div>
+						<div class="single-product--list">
+							<div class="single-product__image">
+								<a class="image-wrap" routerLink="/prasiproductdetail/{{tix.id}}">
+									<img src="{{tix.images[0]}}" class="img-fluid" alt="">
+									<img src="{{tix.images[1]}}"  class="img-fluid" alt="">
+								</a>
+	
+								<div class="single-product__floating-badges">
+									<span class="hot" *ngIf="tix.discount">-{{tix.discount}}%</span>
+									<span class="onsale" *ngIf="tix.new">Nuevo</span>
+								</div>
+							
+								<div class="single-product__floating-icons" *ngIf="this._uw.isLogged">
+									<span class="wishlist">
+										<a data-tippy="Editar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left" >
+											<i class="ion-edit"></i>
+										</a>
+									</span>
+									<span class="quickview" >
+										<a class="cd-trigger"  data-tippy="Borrar" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "left"  >
+											<i class="fa fa-trash"></i>
+										</a></span>
+								</div>
+							</div>
+							<div class="single-product__content">
+								<div class="title">
+									<h3> <a >{{tix.productName}}</a></h3>
+								</div>
+								<div class="price" *ngIf="tix.category=='Moccs'">
+									<span class="main-price discounted" *ngIf="tix.discount && !tix.price" [hidden]="seted">$ {{tix.sin[0]}}</span>
+									<span  class="discounted-price" *ngIf="tix.discount && !tix.price"  [hidden]="seted"> Desde $ {{tix.sin[0] - (tix.discount * tix.sin[0]/100)}}</span>
+									<span class="discounted-price " *ngIf="!tix.discount && !tix.price" [hidden]="seted">Desde $ {{tix.sin[0]}}</span>
+								</div>
+								<div class="price" *ngIf="tix.category!='Moccs'">
+									<span class="main-price discounted" *ngIf="tix.discount && tix.price "  >$ {{tix.price}}</span >
+									<span class="discounted-price" *ngIf="tix.discount && tix.price "  >${{tix.price - (tix.discount * tix.price/100)}}</span >
+									<span class="discounted-price" *ngIf="!tix.discount && tix.price "  >$ {{tix.price }}</span >
+								</div>
+								<p class="short-desc"> {{tix.description}}
+								</p>
+								<a  class="Prasi-button Prasi-button--medium"routerLink="/prasiproductdetail/{{tix.id}}">mas info</a>
 							</div>
 						</div>
 					</div>
